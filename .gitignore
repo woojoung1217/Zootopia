@@ -1,14 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/venv,python,django,database
-# Edit at https://www.toptal.com/developers/gitignore?templates=venv,python,django,database
-
-### Database ###
-*.accdb
-*.db
-*.dbf
-*.mdb
-*.pdb
-*.sqlite3
+# Created by https://www.toptal.com/developers/gitignore/api/python,django
+# Edit at https://www.toptal.com/developers/gitignore?templates=python,django
 
 ### Django ###
 *.log
@@ -222,16 +214,7 @@ cython_debug/
 
 # Cython debug symbols
 
-### venv ###
-# Virtualenv
-# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
-[Bb]in
-[Ii]nclude
-[Ll]ib
-[Ll]ib64
-[Ll]ocal
-[Ss]cripts
-pyvenv.cfg
-pip-selfcheck.json
+# jirisannoo Scripts
+jirisansoo/
 
-# End of https://www.toptal.com/developers/gitignore/api/venv,python,django,database
+# End of https://www.toptal.com/developers/gitignore/api/python,django
