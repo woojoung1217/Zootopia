@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="{% static 'css/serch.css' %}">
+  <title>Search</title>
+</head>
+<body>
+  <!-- 메인 컨테이너 시작 -->
+  <div id="main-container">
+    <!-- 상단 검색 영역 시작 -->
+    <div id="top-area">
+      <span class="back-btn">
+        <a href="{% url 'main' animal %}">
+          <span>
+            <img src="" alt="이전 페이지">
+          </span>
+        </a>
+      </span>
+    </div>
+    <!-- 상단 검색 영역 끝 -->
+    <!-- 하단 추천 영역 시작 -->
+    <div id="bottum-area">
+      <!-- 인기 검색어 시작 -->
+      <div id="hot-topic">
+
+      </div>
+      <!-- 인기 검색어 끝 -->
+      <!-- 최근 글 시작 -->
+      <div id="recent-update">
+
+      </div>
+      <!-- 최근 글 끝 -->
+    </div>
+
+  </div>
+  <!-- 메인 컨테이너 끝 -->
+</body>
+</html>
