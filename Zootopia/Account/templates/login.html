@@ -1,26 +1,40 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="{% static 'css/login.css'%}">
   <title>login</title>
 </head>
 <body>
-  <div class = "main-wrapper">
-    <div class = "header">   <!--로고-->
+  <!-- 메인 시작 -->
+  <div id = "main-wrapper">
+     <!--헤더 시작 -->
+    <div class = "header">  
       <a class ="logo">Zootopia</a>
     </div>
-    <div class = "input-container"> <!-- 메인 시작 -->
+    <!-- 헤더 끝 -->
+    <!-- 인풋 컨테이너 시작 -->
+    <div class = "input-container"> 
       <input placeholder="아이디" class ="input-id" type="text">  <!--아이디 입력-->
       <input placeholder="비밀번호" class="input-password" type="password"> <!-- 비밀번호 입력 -->
     </div>
+    <!-- 인풋 컨테이너 끝 -->
+    <!-- 버튼 컨테이너 시작 -->
     <div class = "button-container"><!-- 회원가입 로그인 버튼 -->
-        <button type="button" class="btn-go-signup">회원가입</button>
         <button type="button" class="btn-login">로그인</button>
     </div>
+    <!-- 버튼 컨테이너 끝 -->
+    <!-- 회원가입 컨테이너 시작 -->
     </div>
+    <div class = "signup-container">
+       <button type="button" class="btn-go-signup">회원가입</button>
+    </div>
+    <!-- 회원가입 컨테이너 끝 -->
   </div>
+   <!-- 메인 끝 -->
 </body>
 </html>
