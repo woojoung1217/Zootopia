@@ -12,20 +12,20 @@ html{
 
 #body-wrapper{
   margin-top:10px;
-  background-color: rgba(241, 247, 254,0.5);
+  background-color: rgba(255, 249, 238, 0.5);
   border: 1px solid gray;
   border-radius: 6px;
   width:300px;
   height:220px;
 }
-.input-text1{
+.text-id{
   margin-top:30px;
   margin-right:220px;
   margin-bottom: 0px;
   color:rgba(0,0,0,0.5);
 }
 
-.input-text2{
+.text-password{
   margin-right:170px;
   margin-bottom: 0px;
   color:rgba(0,0,0,0.5);
@@ -47,7 +47,7 @@ html{
 
 .logo{
   color:rgb(200, 157, 108);
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .input-container{
@@ -94,10 +94,10 @@ html{
   justify-content: center;
   align-items: center;
   margin-top:20px;
-  color:rgba(	9, 105, 218);
+  color:rgba(	9, 105, 218, 0.7);
   width:300px;
   height:40px;
-  border: 1px solid rgba(241, 247, 254.1);
+  border: 1px solid rgba(0, 0, 0,0.5);
   border-radius: 6px;
-  background-color: rgba(241, 247, 254,0.05);
+  background-color: rgba(255, 249, 238, 0.5);
 }
