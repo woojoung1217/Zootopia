@@ -6,13 +6,43 @@ html{
 #main-wrapper{
   display : flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
-.header{
+#body-wrapper{
+  margin-top:10px;
+  background-color: rgba(241, 247, 254,0.5);
+  border: 1px solid gray;
+  border-radius: 6px;
+  width:300px;
+  height:220px;
+}
+.input-text1{
+  margin-top:30px;
+  margin-right:220px;
+  margin-bottom: 0px;
+  color:rgba(0,0,0,0.5);
+}
+
+.input-text2{
+  margin-right:170px;
+  margin-bottom: 0px;
+  color:rgba(0,0,0,0.5);
+}
+
+.signup-text{
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+
+
+#header-wrapper{
   margin-top:3%;
   display:flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .logo{
@@ -21,7 +51,6 @@ html{
 }
 
 .input-container{
-  margin-top:30px;
   display : flex;
   justify-content: center;
   flex-direction: column;
@@ -29,41 +58,46 @@ html{
 }
 
 .input-id{
-  margin-top:30px;
-  width:70%;
-  height:40px;
+  width:250px;
+  height:30px;
+  margin-top: 0px;
+  border: 1px solid gray;
+  border-radius: 6px;
   text-align: center;
 }
 .input-password{
-  margin-top:10%;
-  width:70%;
-  height:40px;
+  width:250px;
+  height:30px;
+  border: 1px solid gray;
+  border-radius: 6px;
   text-align: center;
 }
 .button-container{
-  margin-top:10%;
   display : flex;
   justify-content: center;
 }
 
-
-.btn-go-signup{
-  background-color:white;
-  color:black;
-  width:30%;
-  height:30px;
-  border-radius: 5px;
-  border:0;
-  box-shadow: 2px 2px 5px gray;
-  margin-right:3%;
-}
 .btn-login{
+  margin-top:20px;
   background-color:rgb(200, 157, 108);
   color:white;
-  width:30%;
+  width:250px;
   height:30px;
   border-radius: 5px;
   border:0;
   box-shadow: 2px 2px 5px gray;
   margin-left:3%;
+}
+
+#signup-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:20px;
+  color:rgba(	9, 105, 218);
+  width:300px;
+  height:40px;
+  border: 1px solid rgba(241, 247, 254.1);
+  border-radius: 6px;
+  background-color: rgba(241, 247, 254,0.05);
 }

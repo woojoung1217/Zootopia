@@ -13,25 +13,36 @@
   <!-- 메인 시작 -->
   <div id = "main-wrapper">
      <!--헤더 시작 -->
-    <div class = "header">  
+    <div id = "header-wrapper">  
       <a class ="logo">Zootopia</a>
+      <h5 class ="signup-text">Login To Zootopia</h5>
     </div>
     <!-- 헤더 끝 -->
-    <!-- 인풋 컨테이너 시작 -->
-    <div class = "input-container"> 
-      <input placeholder="아이디" class ="input-id" type="text">  <!--아이디 입력-->
-      <input placeholder="비밀번호" class="input-password" type="password"> <!-- 비밀번호 입력 -->
+   
+    <!-- 바디 시작 -->
+    <div id = "body-wrapper">
+    <!-- 폼 태그 시작 -->
+    <form method="POST" action="">
+       <!-- 인풋 컨테이너 시작 -->
+      <div class = "input-container"> 
+        <h5 class = "input-text1">ID</h5>
+        <input placeholder="아이디" class ="input-id" type="text">  <!--아이디 입력-->
+        <h5 class = "input-text2" >PASSWORD</h5>
+        <input placeholder="비밀번호" class="input-password" type="password"> <!-- 비밀번호 입력 -->
+      </div>
+      <!-- 인풋 컨테이너 끝 -->
+      <!-- 버튼 컨테이너 시작 -->
+      <div class = "button-container"><!-- 회원가입 로그인 버튼 -->
+          <button type="button" class="btn-login">login</button>
+      </div>
+      <!-- 버튼 컨테이너 끝 -->
+      <!-- 회원가입 컨테이너 시작 -->
+    </form>
+    <!-- 폼 태그 끝 -->
     </div>
-    <!-- 인풋 컨테이너 끝 -->
-    <!-- 버튼 컨테이너 시작 -->
-    <div class = "button-container"><!-- 회원가입 로그인 버튼 -->
-        <button type="button" class="btn-login">로그인</button>
-    </div>
-    <!-- 버튼 컨테이너 끝 -->
-    <!-- 회원가입 컨테이너 시작 -->
-    </div>
-    <div class = "signup-container">
-       <button type="button" class="btn-go-signup">회원가입</button>
+    <!-- 바디 끝 -->
+    <div id = "signup-container">
+       <a class="go-signup">Create account</a>
     </div>
     <!-- 회원가입 컨테이너 끝 -->
   </div>
