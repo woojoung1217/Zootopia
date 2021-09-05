@@ -5,3 +5,6 @@ def main (request):
 
 def search (request):
   return render (request, 'search.html')
+
+def result(request):
+  return render (request, 'result.html')
