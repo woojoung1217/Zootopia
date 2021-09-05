@@ -16,11 +16,15 @@ html{
   border: 1px solid gray;
   border-radius: 6px;
   width:300px;
-  height:220px;
+  height:350px;
+}
+.text-name{
+  margin-right:217px;
+  margin-bottom: 0px;
+  color:rgba(0,0,0,0.5);
 }
 .text-id{
-  margin-top:30px;
-  margin-right:220px;
+  margin-right:230px;
   margin-bottom: 0px;
   color:rgba(0,0,0,0.5);
 }
@@ -31,6 +35,11 @@ html{
   color:rgba(0,0,0,0.5);
 }
 
+.text-password-confirm{
+  margin-right:187px;
+  margin-bottom: 0px;
+  color:rgba(0,0,0,0.5);
+}
 .signup-text{
   margin-top: 50px;
   margin-bottom: 0px;
@@ -87,7 +96,7 @@ html{
   justify-content: center;
 }
 
-.btn-login{
+.btn-create{
   margin-top:20px;
   background-color:rgb(200, 157, 108);
   color:white;
@@ -99,7 +108,7 @@ html{
   margin-left:3%;
 }
 
-#create_account-container{
+#login-container{
   display: flex;
   justify-content: center;
   align-items: center;
