@@ -10,9 +10,8 @@ class Post(models.Model):
   # 해쉬태그
   hash_tag = models.CharField(max_length=30)
   # 사진
-  image = models.ImageField(upload_to='post/', black=True, null=True)
+  image = models.ImageField(upload_to='post/', blank=True, null=True)
   # 작성자
-  writer = models.ForeignKey('account.User', on_delete=models.CASCADE)
 
   def __str__(self):
     return self.name
