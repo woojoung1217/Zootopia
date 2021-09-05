@@ -12,7 +12,7 @@ html{
 
 #body-wrapper{
   margin-top:10px;
-  background-color: rgba(255, 249, 238, 0.5);
+  background-color: rgba(245, 251, 255, 0.5);
   border: 1px solid gray;
   border-radius: 6px;
   width:300px;
@@ -34,6 +34,7 @@ html{
 .signup-text{
   margin-top: 50px;
   margin-bottom: 0px;
+  font-family: 'Roboto', sans-serif;
 }
 
 
@@ -58,6 +59,8 @@ html{
 }
 
 .input-id{
+  display: flex;
+  text-align:left;
   width:250px;
   height:30px;
   margin-top: 0px;
@@ -65,12 +68,19 @@ html{
   border-radius: 6px;
   text-align: center;
 }
+.input-id::placeholder{
+  font-family: 'Roboto', sans-serif;
+}
 .input-password{
   width:250px;
   height:30px;
   border: 1px solid gray;
   border-radius: 6px;
   text-align: center;
+}
+
+.input-password::placeholder{
+  font-family: 'Roboto', sans-serif;
 }
 .button-container{
   display : flex;
@@ -94,10 +104,10 @@ html{
   justify-content: center;
   align-items: center;
   margin-top:20px;
-  color:rgba(	9, 105, 218, 0.7);
+  color:rgb(200, 157, 108);
   width:300px;
   height:40px;
   border: 1px solid rgba(0, 0, 0,0.5);
   border-radius: 6px;
-  background-color: rgba(255, 249, 238, 0.5);
+  background-color: rgba(245, 251, 255, 0.5);
 }
