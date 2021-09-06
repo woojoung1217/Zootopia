@@ -61,25 +61,27 @@
         <p class="top-title">최근 게시글</p>
         <div class="recent-update-content">
           <!-- 최근 글 예시 시작 -->
+          {% for post in posts %}
           <div class="recent-post">
             <div class="recent-post-profile-area">
-              <img class="profile-img" src="{% static 'image/cat.jpg' %}" alt="고양이">
+              <img class="profile-img" src="{{ post.image.url }}" alt="고양이">
             </div>
             <div class="recent-post-left-area">
               <div class="recent-post-left-top-area">
-                <p class="animal-name">냥냥이</p>
+                <p class="animal-name">{{ post.name }}</p>
                 <p class="animal-border">|</p>
-                <p class="animal-species">고양이</p>
+                <p class="animal-species">{{ post.species }}</p>
               </div>
               <div class="recent-post-left-bottom-area">
-                <p class="hash-tag">#고양이 #냥냥이</p>
+                <p class="hash-tag">{{ post.hash_tag }}</p>
               </div>
             </div>
             <div class="recent-post-right-area">
-              <p class="location">용인시 기흥구 청덕동</p>
-              <p class="writer">채희찬 ></p>
+              <p class="location">{{ post.location}}</p>
+              <p class="writer">{{ post.name }} ></p>
             </div>
           </div>
+          {% endfor %}
           <!-- 최근 글 예시 끝 -->
           <!-- 최근 글 예시 시작 -->
           <div class="recent-post">
