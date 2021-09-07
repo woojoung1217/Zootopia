@@ -6,3 +6,6 @@ def login (request):
 
 def create_account (request):
   return render (request, 'create_account.html')
+
+def profile (request):
+  return render (request, 'profile.html')
