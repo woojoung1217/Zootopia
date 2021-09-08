@@ -1,0 +1,45 @@
+html {
+  font-size: 10px;
+}
+
+* {
+  font-family: "NanumSquareRound", sans-serif;
+}
+
+#mainWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#header {
+  width: 100%;
+  height: 60px;
+  border-bottom: 2px solid #dddddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#leftArrow {
+  width: 25px;
+  height: 25px;
+}
+
+.input-area {
+  width: 80%;
+}
+
+.input-box-search {
+  width: 95%;
+  height: 30px;
+  padding-left: 10px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #dddddd;
+}
+
+#mainContainer {
+  width: 90%;
+}
