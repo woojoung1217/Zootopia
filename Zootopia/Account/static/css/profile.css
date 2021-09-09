@@ -81,7 +81,7 @@ html{
   height:520px;
   border: 1px solid gray;
   border-width: 0.5px;
-  font-family: 'Roboto', sans-serif;
+
   border-radius: 5px;
   box-shadow: 2px 2px 5px gray;
   background-color: rgba(245, 251, 255, 0.5);
@@ -105,14 +105,12 @@ html{
   justify-content: center;
   border: 1px solid gray;
   border-width: 0.5px;
-  font-family: 'Roboto', sans-serif;
   border-radius: 5px;
   box-shadow: 2px 2px 5px gray;
 }
 
 .my-introduce h5{
   margin-top: 2px;
-  font-family: 'Roboto', sans-serif;
 }
 
 .my-post{
