@@ -79,7 +79,7 @@ html{
   justify-content: center;
   width: 330px;
   height:520px;
-  border: solid  rgba(200, 157, 108, 0.5);
+  border: 1px solid gray;
   border-width: 0.5px;
   font-family: 'Roboto', sans-serif;
   border-radius: 5px;
@@ -103,7 +103,7 @@ html{
   height: 100px;
   display: flex;
   justify-content: center;
-  border: solid  rgba(200, 157, 108, 0.5);
+  border: 1px solid gray;
   border-width: 0.5px;
   font-family: 'Roboto', sans-serif;
   border-radius: 5px;
@@ -122,7 +122,7 @@ html{
   align-items: center;
   width: 300px;
   height: 100px;
-  border: solid  rgba(200, 157, 108, 0.5);
+  border: 1px solid gray;
   border-width: 0.5px;
   border-radius: 5px;
   box-shadow: 2px 2px 5px gray;
