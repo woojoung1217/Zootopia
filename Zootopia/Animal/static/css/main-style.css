@@ -3,7 +3,8 @@
  basic-color : #C89D6C
  size : 375 * 667
  */
- 
+
+
 html{
   font-size: 10px;
 }
@@ -23,20 +24,110 @@ header {
 }
 
 header .menu-btn {
-  width: 11%;
+  width: 13%;
   height:40px;
-  background-color:#fff;
-  border-radius: 90px;
   margin-top: 17px;
-  margin-left: 10px;
+  margin-left: 15px;
+  background-color:#fff;
+  border-radius: 100px;
   box-shadow: 2px 2px 2px #ddd;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header .menu-btn a {
 
+#profile{
+  display:none;
+  width: 80%;
+  height:700px;
+  background-color:#fff;
 }
+
+#profile .profile-header{
+  width: 100%;
+  height: 70px;
+  border-bottom: 3px solid #C89D6C;
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+}
+
+#profile .profile-header .profile-pic{
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: #dddd;
+  margin-right: 10px;
+  box-shadow: 1px 1px 1px #000;
+}
+#profile .profile-header h1 {
+}
+
+#profile .profile-header a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #000;
+  font-weight: 700px;
+}
+
+
+
+#profile .profile-list{
+  width: 100%;
+  height: 200px;
+}
+
+#profile .profile-list li{
+  transition: 2s;
+}
+#profile .profile-list li > a{
+  display: inline-block;
+  text-decoration: none;
+  font-size: 17px;
+  color: #000;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#profile .profile-list li a:hover{
+  font-weight: 900;
+  border-bottom: 1px dashed #000;
+}
+
+#profile .back-btn2 {
+
+  width: 30px;
+  height: 30px;
+  
+}
+#profile .back-btn2 a {
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-image: url(../image/left-arrow.png);
+  background-size: 30px 22px;
+  background-position: center;
+}
+
+header .menu-btn {
+  width: 40px;
+  height: 40px;
+}
+
+
+header .menu-btn a{
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-image: url(../image/menubar.png);
+  background-size: 30px 22px;
+  background-position: center;
+}
+
 
 /* header - 검색기능  */
 header .input-box {
@@ -46,7 +137,7 @@ header .input-box {
 }
 
 header .input-box .box-size{
-  width: inherit;
+  width: 80%;
   height: 30px;
   border-radius: 13px;
   border:1px solid #fff;

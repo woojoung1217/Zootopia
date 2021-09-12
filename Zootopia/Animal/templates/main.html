@@ -1,4 +1,4 @@
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,27 +6,48 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--material icons  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js" integrity="sha512-nTHzMQK7lwWt8nL4KF6DhwLHluv6dVq/hNnj2PBN0xMl2KaMm1PM02csx57mmToPAodHmPsipoERRNn4pG7f+Q==" crossorigin="anonymous"></script> 
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="{% static 'css/main-style.css' %}">
-
-  <title>Zootopia</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <link rel="stylesheet" href="../static/css/main-style.css">
+  <script defer src="../static/js/main.js"></script>
+  <title>Zootopia</title>   
   </head>
   <body>
+    
+    <div id="profile">
+      <div class="profile-header">
+        
+        <div class="profile-pic">
+
+        </div>
+        <h1><a href="#" class="logtext">로그인을 해주세요</a></h1>
+      </div>
+
+      <ul class="profile-list">
+        <li><a href="#">내가 쓴 게시물</a></li>
+        <li><a href="#">회원정보 수정</a></li>
+      </ul>
+        <div class="back-btn2">
+         <a href="#" class="btn-back"></a>
+        </div>
+    </div>
   <!-- 헤더 영역  -->
       <header>
         <div class="menu-btn">
-          <a href="#">
-            <img src="{% static 'image/menubar.png' %}" alt="메뉴바">
-          </a> 
+         <a href="#" class="btn-js"></a>
         </div>
+        
         <!-- 검색기능 -->
+      
         <div class="input-box">
           <form action="">
-            <input type="text" placeholder="주소,장소,동물 검색" class="box-size">
+         <input type="text" placeholder="주소,장소,동물 검색" class="box-size">
           </form>
         </div>
-      </header>
 
+      </header>
       <!-- 버튼 동물 찾기  -->
       
         <div class="container">
@@ -35,8 +56,6 @@
           <div class="item item3"><a href="#">새</a></div>
           <div class="item item4"><a href="#">우중</a></div>
         </div>
-
-
         
         <footer> 
           <!-- 유해종 버튼 -->
@@ -46,9 +65,10 @@
           <!-- plus 버튼 -->
           <div class="click click3">
           <a href="#">
-            <img src="{% static 'image/plus.png' %}" alt="plus 사진">
+            <img src="../static/image/plus.png" alt="plus 사진">
           </a></div>
         </footer>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js" integrity="sha512-nTHzMQK7lwWt8nL4KF6DhwLHluv6dVq/hNnj2PBN0xMl2KaMm1PM02csx57mmToPAodHmPsipoERRNn4pG7f+Q==" crossorigin="anonymous"></script>
   </body>
   </html>

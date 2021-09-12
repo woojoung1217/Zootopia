@@ -18,3 +18,6 @@ def search (request):
 def result(request):
   posts = Post.objects.get(name='고양이')
   return render (request, 'result.html', {"posts":posts})
+
+def profile(request):
+  return render(request,'profile.html')
