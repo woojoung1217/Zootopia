@@ -12,10 +12,20 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
   <link rel="stylesheet" href="../static/css/main-style.css">
   <script defer src="../static/js/main.js"></script>
-  <title>Zootopia</title>   
+  <title>Zootopia</title> 
   </head>
   <body>
-    
+    <div id="map"></div>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f3346db9637de84daa334492d7bf7369"></script>
+    <script>
+      var container = document.getElementById('map');
+      var options = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667),
+        level: 3
+      };
+      var map = new kakao.maps.Map(container, options);
+    </script>
+
     <div id="profile">
       <div class="profile-header">
         
