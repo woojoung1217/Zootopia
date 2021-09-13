@@ -16,7 +16,7 @@ def search (request):
   return render (request, 'search.html', {"posts":posts})
 
 def result(request):
-  posts = Post.objects.get(name='고양이')
+  posts = Post.objects.all()[Post.objects.count()-5::-1]
   return render (request, 'result.html', {"posts":posts})
 
 def profile(request):
