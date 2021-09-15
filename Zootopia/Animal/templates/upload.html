@@ -14,7 +14,7 @@
     {% csrf_token %}
     <header>
       <div class="back-btn">
-        <button href="#"> 
+        <button href="#" class="button-design"> 
            <img src="{% static 'image/back.png' %}" alt="" srcset="">
         </button>
       </div>
@@ -23,7 +23,7 @@
       </div>
      
         <div class="upload-btn">
-          <button href="#" type = "submit">등록</button>
+          <button href="#" type = "submit"class="button-design">등록</button>
         </div>
       </header> 
 
@@ -39,7 +39,14 @@
         <div class="content-picture">
 
         <div class="upload-btnp">
-          <a href="#">업로드</a>
+          <form method="post" enctype="multipart/form-data">
+            <div class="button">
+                <label for="chooseFile">
+             
+                </label>
+            </div>
+            <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+        </form>
         </div>
         </div>
 
@@ -53,7 +60,7 @@
         <textarea id="type"placeholder="동물종 입력" name="species" ></textarea>
       </div>
       <div class="animaltype">
-        <textarea id="type"placeholder="동물종 입력" name ="hashtag"></textarea>
+        <textarea id="type"placeholder="해시태그" name ="hashtag"></textarea>
       </div>
 
 
