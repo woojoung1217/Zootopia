@@ -11,3 +11,6 @@ function test(event){
 
 selected.addEventListener("click", test);
 deselected.addEventListener("click", toggleSelected);
+  position: relative;
+  z-index: 1;
+}
