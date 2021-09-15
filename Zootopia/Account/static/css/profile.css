@@ -31,6 +31,10 @@ html{
   flex:1;
 }
 
+.blank a{
+  text-decoration-line: none;
+}
+
 .profile-content{
   width:100%;
   display: flex;
