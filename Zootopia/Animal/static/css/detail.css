@@ -21,11 +21,10 @@ header h1 {
 header .btn-cover {
   width: 20%;
   height: 30px;
-  background-color: royalblue;
 
 }
 header .btn-cover .back-btn{
-   /* image */
+  margin-left: 20px;
 }
 
 header .none {
@@ -140,7 +139,7 @@ header .none {
 
 .comment-area {
   width: 100%;
-  height: 50px;
+  height: 90px;
   border-bottom: 1px solid #ddd;
   display: flex;
   justify-content: space-between;
@@ -149,8 +148,8 @@ header .none {
 
 
 #comment {
-  width: 80%;
-  height: 40px;
+  width: 100%;
+  height: 80px;
   border-style: none;
   color:#000;
   font-size: 12px;  
