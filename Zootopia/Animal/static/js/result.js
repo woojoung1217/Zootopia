@@ -1,8 +1,8 @@
 const selected = document.querySelector(".selected");
-const deselected = document.querySelector(".nav-manu");
+const deselected = document.querySelectorAll(".nav-manu");
 
 function toggleSelected(event){
-  console.log("??");
+  console.log(`${event} ok`);
 }
 
 function test(event){
@@ -10,4 +10,7 @@ function test(event){
 }
 
 selected.addEventListener("click", test);
-deselected.addEventListener("click", toggleSelected);
+
+for(manu in deselected){
+  manu.addEventListener("click", toggleSelected);
+}
