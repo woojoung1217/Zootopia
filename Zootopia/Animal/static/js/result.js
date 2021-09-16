@@ -1,16 +1,15 @@
 const selected = document.querySelector(".selected");
-const deselected = document.querySelectorAll(".nav-manu");
+const manues = document.querySelectorAll(".nav-manu");
 
 function toggleSelected(event){
-  console.log(`${event} ok`);
+  for(let i = 0; i < manues.length; i++){
+    manues[i].classList.remove("selected-manu");
+    manues[i].children[0].classList.remove("selected-title")
+  }
+  event.currentTarget.classList.add("selected-manu");
+  event.currentTarget.children[0].classList.add("selected-title");
 }
 
-function test(event){
-  console.log(event);
-}
-
-selected.addEventListener("click", test);
-
-for(manu in deselected){
-  manu.addEventListener("click", toggleSelected);
+for(let i = 0; i< manues.length; i++){
+  manues[i].addEventListener("click", toggleSelected);
 }
