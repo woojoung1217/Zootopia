@@ -5,11 +5,11 @@ class Post(models.Model):
   # 동물 이름
   name = models.CharField(max_length=20)
   # 동물 종
-  species = models.CharField(max_length=20)
+  species = models.CharField(max_length=20, null=True)
   # 내용
   body = models.TextField(max_length=100)
   # 해쉬태그
-  hash_tag = models.CharField(max_length=30)
+  hash_tag = models.CharField(max_length=30, null=True)
   # 사진
   image = models.ImageField(upload_to='post/', blank=True, null=True)
   # 작성자

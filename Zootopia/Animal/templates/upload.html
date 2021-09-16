@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <form method="Post">
+  <form method="Post" enctype="multipart/form-data">
     {% csrf_token %}
     <header>
       <div class="back-btn">
@@ -39,14 +39,9 @@
         <div class="content-picture">
 
         <div class="upload-btnp">
-          <form method="post" enctype="multipart/form-data">
             <div class="button">
-                <label for="chooseFile">
-             
-                </label>
+              <input type="file" name = "image">
             </div>
-            <input type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
-        </form>
         </div>
         </div>
 
@@ -57,18 +52,18 @@
       </div>
 
       <div class="animaltype">
-        <textarea id="type"placeholder="동물종 입력" name="species" ></textarea>
+        <input type="text" id="type" placeholder="동물 품종(?) 입력" >
       </div>
       <div class="animaltype">
-        <textarea id="type"placeholder="해시태그" name ="hashtag"></textarea>
+        <input type="text" id="type" placeholder="#해시태그" name ="hashtag">
       </div>
 
 
     <div class="select-place">
       <div class="location">
         <label for="animals"class="animals" >동물종 선택</label>
-        <select name="animal" id="animal" >
-          <option value="cat">고양이</option>
+        <select name="species" id="animal" >
+          <option value="cat" selected>고양이</option>
           <option value="dog">강아지</option>
           <option value="etc1">유해종</option>
           <option value="etc2">희귀종</option>

@@ -1,13 +1,17 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from animal.models import Post
+from django.contrib.auth import get_user_model
 from .models import *
 from account.models import User
 
 def main (request):
   return render (request, 'main.html')  
 
-def detail(request):
-  return render (request, 'detail.html')  
+def detail(request, id):
+  post = get_object_or_404(Post, pk = id)
+  person = get_object_or_404(get_user_model(), username=request.user)
+
+  return render(request, 'detail.html', {'post' :post,'person':person})
 
 def upload (request):
    if request.method == "POST":  # method가 Post일 때 글 작성
@@ -23,7 +27,7 @@ def upload (request):
       user = User.objects.get(id = user_id)
       post_blog.author = user
       post_blog.save()
-      return redirect('/')
+      return redirect('detail', post_blog.id)
 
    else:
       return render (request, 'upload.html')  
