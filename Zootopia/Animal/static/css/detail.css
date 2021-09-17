@@ -49,22 +49,28 @@ header .none {
 .sub-header .content-text {
   width: 20%;
   height: 30px;
-  background-color: tomato;
 }
 
 .sub-header .content-type {
   width: 20%;
   height: 30px;
-  background-color: yellow;
 }
 .sub-header .content-loacation {
   width: 50%;
   height: 30px;
-  background-color: green;
 }
 
 
 .content-picture{
+  width: 100%;
+  height: 250px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-picture img{
   width: 100%;
   height: 250px;
   border-bottom: 1px solid #ddd;
@@ -133,7 +139,6 @@ header .none {
   width: 50%;
   height: 20px;
   margin-left: 10px;
-  background-color: gray;
 }
 
 
