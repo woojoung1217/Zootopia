@@ -1,11 +1,18 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
+from django.conf import settings
+from django.db.models.deletion import CASCADE
+
 
 class Post(models.Model):
+  
   # 동물 이름
   name = models.CharField(max_length=20)
   # 동물 종
   species = models.CharField(max_length=20, null=True)
+  # 동물 품종
+  variety = models.CharField(max_length=20, null=True)
   # 내용
   body = models.TextField(max_length=100)
   # 해쉬태그
@@ -13,13 +20,19 @@ class Post(models.Model):
   # 사진
   image = models.ImageField(upload_to='post/', blank=True, null=True)
   # 작성자
-  time =  models.DateTimeField(auto_now_add=True)
+
   # 작성 시간
+  time =  models.DateTimeField(auto_now_add=True)
+  # 위도
   latitude = models.FloatField(default=0.0) 
-  #위도
+  # 경도
   longitude = models.FloatField(default=0.0) 
-  #경도
+  # 좋아요
+  likes = models.ManyToManyField('account.User', through='Like', through_fields=('post', 'user'), related_name='likes')    
 
   def __str__(self):
     return self.name
 
+class Like(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    user = models.ForeignKey('account.User', on_delete=models.CASCADE)

@@ -9,5 +9,8 @@ urlpatterns = [
     path('main/', views.main, name="main"),
     path('upload/', views.upload, name="upload"),
     path('detail/<str:id>', views.detail, name='detail'),
-    path('profile/',views.profile, name="profile")
+    path('profile/',views.profile, name="profile"),
+    path('delete/<str:id>', views.delete, name='delete'),    
+    path('edit/<str:id>', views.edit, name='edit'),
+    path('like/<int:id>', views.post_like, name='post_like'),
 ]
