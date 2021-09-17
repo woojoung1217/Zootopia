@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/create_account.css'%}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <title>login</title>
+</head>
+<body>
+  <!-- 메인 시작 -->
+  <div id = "main-wrapper">
+     <!--헤더 시작 -->
+    <div id = "header-wrapper">  
+      <a class ="logo">동 심</a>
+      <h3 class ="signup-text">Create Account</h3>
+    </div>
+    <!-- 헤더 끝 -->
+   
+    <!-- 바디 시작 -->
+    <div id = "body-wrapper">
+    <!-- 폼 태그 시작 -->
+    <form method="POST">
+      {% csrf_token %}
+       <!-- 인풋 컨테이너 시작 -->
+      <div class = "input-container"> 
+        <h5 class = "text-name">닉네임</h5>
+        <input name="nickname" placeholder="닉네임" class ="input-id" type="text">  <!--아이디 입력--> <!-- 비밀번호 확인 -->
+        <h5 class = "text-id">ID</h5>
+        <input name="username" placeholder="아이디" class ="input-id" type="text">  <!--아이디 입력-->
+        <h5 class = "text-password" >PASSWORD</h5>
+        <input name="password1" placeholder="비밀번호" class="input-password" type="password"> <!-- 비밀번호 입력 -->
+        <h5 class = "text-password-confirm" >CONFIRM</h5>
+        <input name="password2" placeholder="비밀번호" class="input-password" type="password"> <!-- 비밀번호 확인 -->
+      </div>
+      <!-- 인풋 컨테이너 끝 -->
+      <!-- 버튼 컨테이너 시작 -->
+      <div class = "button-container"><!-- 회원가입 로그인 버튼 -->
+          <button type="submit" class="btn-create">Create</button>
+      </div>
+      <!-- 버튼 컨테이너 끝 -->
+    </form>
+    <!-- 폼 태그 끝 -->
+    </div>
+    <!-- 바디 끝 -->
+    <!-- 로그인 컨테이너 시작 -->
+      <div id = "login-container">
+        <a href="{% url 'login' %}">Login</a>
+      </div>
+    <!-- 로그인 컨테이너 끝 -->
+  </div>
+   <!-- 메인 끝 -->
+</body>
+</html>

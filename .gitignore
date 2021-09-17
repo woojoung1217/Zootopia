@@ -1,14 +1,5 @@
-
-# Created by https://www.toptal.com/developers/gitignore/api/venv,python,django,database
-# Edit at https://www.toptal.com/developers/gitignore?templates=venv,python,django,database
-
-### Database ###
-*.accdb
-*.db
-*.dbf
-*.mdb
-*.pdb
-*.sqlite3
+# Created by https://www.toptal.com/developers/gitignore/api/django,windows,macos
+# Edit at https://www.toptal.com/developers/gitignore?templates=django,windows,macos
 
 ### Django ###
 *.log
@@ -158,80 +149,64 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-### Python ###
-# Byte-compiled / optimized / DLL files
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
 
-# C extensions
+# Icon must end with two \r
+Icon
 
-# Distribution / packaging
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+# Thumbnails
+._*
 
-# Installer logs
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
 
-# Unit test / coverage reports
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
 
-# Translations
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
 
-# Django stuff:
+# Dump file
+*.stackdump
 
-# Flask stuff:
+# Folder config file
+[Dd]esktop.ini
 
-# Scrapy stuff:
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
 
-# Sphinx documentation
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
 
-# PyBuilder
+# Windows shortcuts
+*.lnk
 
-# Jupyter Notebook
+# End of https://www.toptal.com/developers/gitignore/api/django,windows,macos
 
-# IPython
+# jirisannoo Scripts
+jirisansoo/
 
-# pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
-
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-
-# Celery stuff
-
-# SageMath parsed files
-
-# Environments
-
-# Spyder project settings
-
-# Rope project settings
-
-# mkdocs documentation
-
-# mypy
-
-# Pyre type checker
-
-# pytype static type analyzer
-
-# Cython debug symbols
-
-### venv ###
-# Virtualenv
-# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
-[Bb]in
-[Ii]nclude
-[Ll]ib
-[Ll]ib64
-[Ll]ocal
-[Ss]cripts
-pyvenv.cfg
-pip-selfcheck.json
-
-# End of https://www.toptal.com/developers/gitignore/api/venv,python,django,database
+# End of https://www.toptal.com/developers/gitignore/api/python,django

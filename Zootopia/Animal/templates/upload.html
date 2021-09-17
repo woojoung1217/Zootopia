@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/upload-style.css' %}">
+  <title>upload</title>
+</head>
+
+<body>
+  <form method="Post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <header>
+      <div class="back-btn">
+        <button href="#" class="button-design"> 
+           <img src="{% static 'image/back.png' %}" alt="" srcset="">
+        </button>
+      </div>
+      <div class="h1box">
+      <h1>새 게시물</h1>
+      </div>
+     
+        <div class="upload-btn">
+          <button href="#" type = "submit"class="button-design">등록</button>
+        </div>
+      </header> 
+
+      <section>
+        <div class="insert-name">
+          <input type="text" placeholder="이름" class="name-box" name="name">
+        </div>
+      </section>
+
+
+
+      <div class="insert-contents">
+        <div class="content-picture">
+
+        <div class="upload-btnp">
+            <div class="button">
+              <input type="file" name = "image">
+            </div>
+        </div>
+        </div>
+
+        <div class="text-control"> 
+          <input type="text" placeholder="내용을입력해주세요"class="content-text" name="body">
+        </div>
+        <!-- 수정필요 -->
+      </div>
+
+      <div class="animaltype">
+        <input type="text" id="type" placeholder="동물 품종(?) 입력" >
+      </div>
+      <div class="animaltype">
+        <input type="text" id="type" placeholder="#해시태그" name ="hashtag">
+      </div>
+
+
+    <div class="select-place">
+      <div class="location">
+        <label for="animals"class="animals" >동물종 선택</label>
+        <select name="species" id="animal" >
+          <option value="고양이" selected>고양이</option>
+          <option value="강아지">강아지</option>
+          <option value="유해종">유해종</option>
+          <option value="희귀종">희귀종</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
