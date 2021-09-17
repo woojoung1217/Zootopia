@@ -26,10 +26,10 @@
 
     <div class="sub-header">
         <div class="content-text">
-          <p><p>{{post.name}}</p>  </p>
+          <p><p>{{post.name}}</p>  </p> <!-- 동물 이름 -->
         </div>
         <div class="content-type">
-          <p>{{post.species}}</p>
+          <p>{{post.species}}</p>  <!-- 동물 종 -->
         </div>
         <div class="content-loacation">
           <p></p>  
@@ -37,18 +37,33 @@
     </div>
 
     <div class="content-picture">
-      <img src="{{ post.image.url }}">
+     {%if post.image%}
+       <img src="{{ post.image.url }}">
+     {% else %}
+       <!-- 메인 사진 -->
+     {%endif%}
     </div>
     <!-- 좋아요 해시태그 등 -->
     <div class="emotion">
       <div class="emotion-select">
-        <div class="like">
-          {{post.hash_tag}}  <!-- 해시태그 -->
+        <div class="hashtag">
+          {{post.hash_tag}}        <!-- 해시태그 --> 
+        </div>
+        <div class="Like">
+          <a href = "{% url 'post_like' post.id %}">{{message}}</a>
+          {{post.likes.count}}명이 좋아합니다!
         </div>
         <div class="hate">
-          <!-- 좋아요 버튼 -->
+        
         </div>
-      </div>
+
+        <div class="delete">
+          {%if post.id == user.id%}
+          {%endif%}
+           <a href="{% url 'edit' post.id %}">수정 임시 버튼</a>   <!-- 수정 --> 
+           <a href="{% url 'delete' post.id %}">삭제 임시 버튼</a>   <!-- 삭제 -->
+        </div>
+    </div>
 
       <div class="etc">
         <div class="etc1">
@@ -56,7 +71,7 @@
         </div>
 
         <div class="textbox">
-           <p>{{post.body}}</p>  
+           <p>{{post.body}}</p>   <!-- 글 내용 -->
         </div>
       </div>
     </div>
