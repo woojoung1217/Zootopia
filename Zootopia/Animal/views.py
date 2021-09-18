@@ -19,7 +19,7 @@ def detail(request, id):
   return render(request, 'detail.html', {'post' :post,'person':person, 'message' : message})
 
 def upload (request):
-   if request.method == "POST":  # method가 Post일 때 글 작성
+   if request.method == "POST":  
       post_blog = Post()
       post_blog.name= request.POST.get('name')
       post_blog.time = timezone.datetime.now() 
