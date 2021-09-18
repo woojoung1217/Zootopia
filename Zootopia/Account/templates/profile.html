@@ -17,12 +17,15 @@
       <div class ="btn-back">
         <img src="{% static 'image/back.png' %}"> <!-- 뒤로가기 버튼 -->
       </div>
-      <a class ="logo">Zootopia</a>
-      <div class="blank"> <a href = "{% url 'logout'%}">logout</a>
-      </div>
+      <a class ="logo">동심|動心</a>
+      <div class="blank"> <a href = "{% url 'logout'%}">Logout</a></div>
     </div>
   <!-- 헤더 끝 -->
-  
+<!-- 프로필 텍스트 : 프로필 페이지임을 확인시켜주는 문구 -->
+    <div class="profiletext">
+      <h1>프로필</h1>
+    </div>
+
   <!-- 메인 시작 -->
   <div id="main-wrapper">
 
@@ -41,13 +44,13 @@
         </div>
       </div>
       <div class = "my-introduce">
-        <h5>profile-massage </h5> <!-- 내 소개 넣는 공간 -->
+        <h5>프로필 소개글</h5> <!-- 내 소개 넣는 공간 -->
       </div>
       <div class = "my-post">
-        <h4>My post</h4>        <!-- 내가 작성한 글? -->
+        <h5>내가 작성한 게시물</h5>        <!-- 내가 작성한 글? -->
       </div>
       <div class = "btn-modifi">   <!-- 프로필 수정 버튼 -->
-        <button>edit</button>
+        <button>프로필 수정</button>
       </div>
     </div> <!-- id 카드 끝 -->
   </div>
