@@ -48,6 +48,10 @@ def result(request):
 def profile(request):
   return render(request,'profile.html')
 
+def location(request):
+  return render(request,'location.html')
+
+
 def delete(request, id):
     delete_blog = Post.objects.get(id=id)
     delete_blog.delete()
