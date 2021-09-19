@@ -22,7 +22,9 @@
         </a>
       </div>
       <div class="input-area">
-        <input class="input-box-search" type="text" placeholder="검색어를 입력하세요.">
+        <form action="{% url 'result' %}">
+          <input class="input-box-search" type="text" placeholder="검색어를 입력하세요." name="search">
+        </form>
       </div>
     </div>
     <!-- 상단 검색 영역 끝 -->
