@@ -33,7 +33,6 @@ def upload (request):
       post_blog.author = user
       post_blog.save()
       return redirect('detail', post_blog.id)
-
    else:
       return render (request, 'upload.html')  
 
