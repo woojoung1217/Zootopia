@@ -10,10 +10,10 @@ btnEl.addEventListener('click',function(){
   })
 },)
 
-const backbtn = document.querySelector('.btn-back')
+const backbtn = document.querySelector('#map')
 
 backbtn.addEventListener('click',function(){
-  gsap.to('#profile',.7, {
+  gsap.to('#profile',.5, {
     display:'none',
   })
 })

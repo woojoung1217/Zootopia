@@ -29,6 +29,7 @@ function displayMarker(locPosition) {
 var marker = new kakao.maps.Marker({  
     map: map, 
     position: locPosition,
+    title:'고양이',
 }); 
 // 지도 중심좌표를 접속위치로 변경합니다
 map.setCenter(locPosition);      

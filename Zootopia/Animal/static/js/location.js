@@ -40,9 +40,12 @@ var marker = new kakao.maps.Marker({
 }); 
 // 지도에 마커를 표시합니다
 marker.setMap(map);
+
 kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
-    // 클릭한 위도, 경도 정보를 가져옵니다 
-    var latlng = mouseEvent.latLng; 
-    // 마커 위치를 클릭한 위치로 옮깁니다
-    marker.setPosition(latlng);
+  // 클릭한 위도, 경도 정보를 가져옵니다 
+  var latlng = mouseEvent.latLng; 
+  // 마커 위치를 클릭한 위치로 옮깁니다
+  marker.setPosition(latlng);
 });
+
+
