@@ -22,7 +22,7 @@
         </a>
       </div>
       <div class="input-area">
-        <form action="{% url 'result' %}">
+        <form action="{% url 'result' %}" method="GET">
           <input class="input-box-search" type="text" placeholder="검색어를 입력하세요." name="search">
         </form>
       </div>
@@ -62,14 +62,14 @@
       <div id="recentUpdateArea">
         <p class="top-title">최근 게시글</p>
         <div class="recent-update-content">
-          <!-- 최근 글 예시 시작 -->
+          <!-- 최근 글 반복문 시작 -->
           {% for post in posts %}
           <div class="recent-post">
             <div class="recent-post-profile-area">
               {% if post.image %}
-              <img class="profile-img" src="{{ post.image.url }}" alt="고양이">
+              <img class="profile-img" src="{{ post.image.url }}" alt="">
               {% else %}
-              <img class="profile-img" src="{% static 'image/cat.jpg' %}" alt="고양이">
+              <img class="profile-img" src="{% static 'image/cat.jpg' %}" alt="">
               {% endif %}
             </div>
             <div class="recent-post-left-area">
@@ -88,7 +88,7 @@
             </div>
           </div>
           {% endfor %}
-          <!-- 최근 글 예시 끝 -->
+          <!-- 최근 글 반복문 끝 -->
         </div>
       </div>
       <!-- 최근 글 끝 -->
