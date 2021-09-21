@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
@@ -37,4 +37,18 @@ def create_account (request):
   return render(request, 'create_account.html')
 
 def profile (request):
-  return render (request, 'profile.html')
+  person = get_object_or_404(get_user_model(), username=request.user)
+  
+  return render (request, 'profile.html', {'person' : person})
+
+def profile_edit(request):
+    person = get_object_or_404(get_user_model(), username=request.user)
+    if request.method == "POST":
+      person.nickname = request.POST.get('nickname')
+      person.introduce = request.POST.get('introduce') 
+      person.profile_picture = request.FILES.get('profile_picture')
+      person.save()
+      return redirect('/account/profile/', {'person' : person})
+    
+    else:        
+      return render(request, 'profile_edit.html', {'person' : person})
