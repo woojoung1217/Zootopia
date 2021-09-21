@@ -20,10 +20,8 @@
         </span>
       </div>
       <div class="input-area">
-        <form id="search-form" action="{% url 'result' %}" method="GET">
-          <a href="{% url 'search' %}" type="submit">
-            <input id="search-box" class="input-box-search" type="text"></input>
-          </a>
+        <form id="search-form" action="{% url 'search' %}" method="GET">
+          <input id="search-box" class="input-box-search" type="submit" name="search"></input>
         </form>
       </div>
     </div>

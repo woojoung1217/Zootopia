@@ -19,7 +19,7 @@ function goBackPage(){
 
 // 검색어 가져오기 메서드
 function getSearchWord(){
-  let url = location.search; 
+  let url = decodeURI(location.search);
   const searchWord = url.slice((url.indexOf('=')+1), url.length);
   searchBox.value = searchWord;
 }
