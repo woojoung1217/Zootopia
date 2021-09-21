@@ -15,15 +15,13 @@
     <!-- 상단 검색 영역 시작 -->
     <div id="header">
       <div class="btn-area">
-        <a href="{% url 'main' %}">
-          <span>
-            <img id="leftArrow" src="{% static 'image/left-arrow.png' %}" alt="이전 페이지">
-          </span>
-        </a>
+        <span onclick="goBackPage()">
+          <img id="leftArrow" src="{% static 'image/left-arrow.png' %}" alt="이전 페이지">
+        </span>
       </div>
       <div class="input-area">
-        <form action="{% url 'result' %}" method="GET">
-          <input class="input-box-search" type="text" placeholder="검색어를 입력하세요." name="search">
+        <form id="search-form" action="{% url 'result' %}" method="GET">
+          <input id="search-box" class="input-box-search" type="text" placeholder="검색어를 입력하세요." name="search" autofocus>
         </form>
       </div>
     </div>
@@ -96,5 +94,6 @@
 
   </div>
   <!-- 메인 컨테이너 끝 -->
+  <script src="{% static 'js/search.js' %}"></script>
 </body>
 </html>
