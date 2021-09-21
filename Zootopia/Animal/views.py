@@ -37,12 +37,17 @@ def upload (request):
       return render (request, 'upload.html')  
 
 def search (request):
-  posts = Post.objects.all()[Post.objects.count()-5::-1]
-  return render (request, 'search.html', {"posts":posts})
+  # 최근 글이 5개 이하일 경우
+  if Post.objects.count()<5:
+    posts = Post.objects.all()[::-1]
+    return render (request, 'search.html', {"posts":posts})
+  # 최근 글이 5개 이상일 경우
+  else:     
+    posts = Post.objects.all()[Post.objects.count()-5::-1]
+    return render (request, 'search.html', {"posts":posts})
 
 def result(request):
-  posts = Post.objects.all()[Post.objects.count()-5::-1]
-  return render (request, 'result.html', {"posts":posts})
+  return render (request, 'result.html')
 
 def profile(request):
   return render(request,'profile.html')
