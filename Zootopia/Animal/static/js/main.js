@@ -1,3 +1,4 @@
+// 메인화면서에서 메뉴바를 눌렀을 때 드랍다운 메뉴관련 js 만 작성
 
 
 const btnEl = document.querySelector('.btn-js')
