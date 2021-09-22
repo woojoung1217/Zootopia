@@ -32,7 +32,7 @@
           <p>{{post.species}}</p>  <!-- 동물 종 -->
         </div>
         <div class="content-loacation">
-          <p></p>  
+          <p>{{person.nickname}}</p>  
         </div>
     </div>
 
@@ -51,17 +51,16 @@
         </div>
         <div class="Like">
           <a href = "{% url 'post_like' post.id %}">{{message}}</a>
-          {{post.likes.count}}명이 좋아합니다!
+          {{post.likes.count}}명이 좋아합니다!!
         </div>
         <div class="hate">
-        
         </div>
 
         <div class="delete">
-          {%if post.id == user.id%}
-          {%endif%}
-           <a href="{% url 'edit' post.id %}">수정 임시 버튼</a>   <!-- 수정 --> 
-           <a href="{% url 'delete' post.id %}">삭제 임시 버튼</a>   <!-- 삭제 -->
+          {%if post.author == user%}
+            <a href="{% url 'edit' post.id %}">수정 임시 버튼</a>   <!-- 수정 --> 
+            <a href="{% url 'delete' post.id %}">삭제 임시 버튼</a>   <!-- 삭제 -->
+          {%endif%}     
         </div>
     </div>
 

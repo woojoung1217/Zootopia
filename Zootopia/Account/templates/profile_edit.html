@@ -30,6 +30,8 @@
   <div id="main-wrapper">
 
     <!-- id 카드 시작 -->
+    <form method="Post" enctype="multipart/form-data">
+    {% csrf_token %}
     <div id="id-card">
       <div class = "profile-picture">
         {% if person.profile_picture %}
@@ -37,27 +39,31 @@
         {% else %}
           <img src="{% static 'image/profile.png' %}">
         {% endif %}
+        <div class="button">
+              <input type="file" name = "profile_picture">
+        </div>
       </div>
                 
       <div class = "profile-content">  
         <div class = "blank">
         </div>
         <div class="profile-name">
-          <h3>{{person.nickname}}</h3>               <!-- 작성자 이름 넣는 공간 -->
+          <input type="text" placeholder="닉네임" name="nickname" value={{person.nickname}}></input>           <!-- 작성자 이름 넣는 공간 -->
         </div>
         <div class = "blank">
         </div>
       </div>
       <div class = "my-introduce">
-        <h5 placeholder = "내 소개">{{person.introduce}}</h5> <!-- 내 소개 넣는 공간 -->
+        <input type="text" placeholder="내 소개"  name="introduce" value={{person.introduce}}></input>   <!-- 내 소개 넣는 공간 -->
       </div>
       <div class = "my-post">
         <h5>내가 작성한 게시물</h5>        <!-- 내가 작성한 글? -->
       </div>
       <div class = "btn-modifi">   <!-- 프로필 수정 버튼 -->
-         <a href="{% url 'profile_edit' %}">수정 임시 버튼</a> 
+        <button type="submit">프로필 수정</button>
       </div>
     </div> <!-- id 카드 끝 -->
+    </form>
   </div>
   <!-- 메인 끝 -->
 </body>

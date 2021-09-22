@@ -1,3 +1,4 @@
+from typing import Container
 from django.shortcuts import render, redirect, get_object_or_404
 from animal.models import Post
 from django.contrib.auth import get_user_model
@@ -19,7 +20,7 @@ def detail(request, id):
   return render(request, 'detail.html', {'post' :post,'person':person, 'message' : message})
 
 def upload (request):
-   if request.method == "POST":  # method가 Post일 때 글 작성
+   if request.method == "POST":  
       post_blog = Post()
       post_blog.name= request.POST.get('name')
       post_blog.time = timezone.datetime.now() 
@@ -33,17 +34,57 @@ def upload (request):
       post_blog.author = user
       post_blog.save()
       return redirect('detail', post_blog.id)
-
    else:
       return render (request, 'upload.html')  
 
+# 검색 페이지 최근글 load
 def search (request):
-  posts = Post.objects.all()[Post.objects.count()-5::-1]
+  # 최근 글이 5개 이하일 경우
+  if Post.objects.count()<5:
+    posts = Post.objects.all()[::-1]
+  # 최근 글이 5개 이상일 경우
+  else:     
+    posts = Post.objects.all()[Post.objects.count()-5::-1]
   return render (request, 'search.html', {"posts":posts})
 
 def result(request):
-  posts = Post.objects.all()[Post.objects.count()-5::-1]
-  return render (request, 'result.html', {"posts":posts})
+  search_word = request.GET['search']
+  # 검색어를 포함하는 이름이 5개 이하일 경우
+  if Post.objects.filter(name__contains=search_word).count()<5:
+    names = Post.objects.filter(name__contains=search_word)
+  # 검색어를 포함하는 이름이 5개 이상일 경우
+  else:
+    names = Post.objects.filter(name__contains=search_word)[Post.objects.filter(name__contains=search_word).count()-5::1]
+  
+  # 검색어를 포함하는 주소가 5개 이하일 경우
+  # if Post.objects.filter(address__contains=search_word).count()<5:
+  #   addresses = Post.objects.filter(address__contains=search_word)
+  # # 검색어를 포함하는 주소가 5개 이상일 경우
+  # else:
+  #   addresses = Post.objects.filter(address__contains=search_word)[Post.objects.filter(address__contains=search_word).count()-5::1]
+
+  # 검색어를 포함하는 동물종이 5개 이하일 경우
+  if Post.objects.filter(species__contains=search_word).count()<5:
+    species = Post.objects.filter(species__contains=search_word)
+  # 검색어를 포함하는 동물종이 5개 이상일 경우
+  else:
+    species = Post.objects.filter(species__contains=search_word)[Post.objects.filter(species__contains=search_word).count()-5::1]
+
+  # # 검색어를 포함하는 작성자가 5개 이하일 경우
+  # if Post.objects.filter(author__contains=search_word).count()<5:
+  #   authors = Post.objects.filter(author__contains=search_word)
+  # # 검색어를 포함하는 작성자 5개 이상일 경우
+  # else:
+  #   authors = Post.objects.filter(author__contains=search_word)[Post.objects.filter(author__contains=search_word).count()-5::1]
+
+  # 검색어를 포함하는 해시태그가 5개 이하일 경우
+  if Post.objects.filter(hash_tag__contains=search_word).count()<5:
+    hashTags = Post.objects.filter(hash_tag__contains=search_word)
+  # 검색어를 포함하는 해시태그가 5개 이상일 경우
+  else:
+    hashTags = Post.objects.filter(hash_tag__contains=search_word)[Post.objects.filter(hash_tag__contains=search_word).count()-5::1]
+
+  return render (request, 'result.html', {'names':names, 'addresses':addresses, 'species':species, 'authors':authors, 'hashTags':hashTags})
 
 def profile(request):
   return render(request,'profile.html')

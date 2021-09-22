@@ -20,7 +20,7 @@ class Post(models.Model):
   # 사진
   image = models.ImageField(upload_to='post/', blank=True, null=True)
   # 작성자
-
+  author = models.ForeignKey('account.User', on_delete=models.CASCADE, null=True)
   # 작성 시간
   time =  models.DateTimeField(auto_now_add=True)
   # 위도
