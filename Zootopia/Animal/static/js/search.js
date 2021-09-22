@@ -13,4 +13,13 @@ function goBackPage(){
   window.history.back();
 }
 
+// 검색어 가져오기 메서드
+function getSearchWord(){
+  let url = decodeURIComponent(location.search);
+  let searchWord = url.slice((url.indexOf('=')+1), url.length);
+  searchWord = searchWord.replace(/\+/g , ' ');
+  searchBox.value = searchWord;
+}
+
 searchForm.addEventListener("submit", preventEmptyBox);
+getSearchWord();
