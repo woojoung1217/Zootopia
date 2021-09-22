@@ -1,3 +1,4 @@
+// 메인화면서에서 메뉴바를 눌렀을 때 드랍다운 메뉴관련 js 만 작성
 
 
 const btnEl = document.querySelector('.btn-js')
@@ -10,10 +11,10 @@ btnEl.addEventListener('click',function(){
   })
 },)
 
-const backbtn = document.querySelector('.btn-back')
+const backbtn = document.querySelector('#map')
 
 backbtn.addEventListener('click',function(){
-  gsap.to('#profile',.7, {
+  gsap.to('#profile',.5, {
     display:'none',
   })
 })

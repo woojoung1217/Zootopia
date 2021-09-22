@@ -16,6 +16,7 @@
 
   <body>
 
+
     <div id="map"></div>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f3346db9637de84daa334492d7bf7369"></script>
     <!-- <script>
@@ -26,7 +27,6 @@
       };
       var map = new kakao.maps.Map(container, options);
     </script> -->
-
     <div id="profile">
       <div class="profile-header">
         
@@ -40,9 +40,7 @@
         <li><a href="#">내가 쓴 게시물</a></li>
         <li><a href="#">회원정보 수정</a></li>
       </ul>
-        <div class="back-btn2">
-         <a href="#" class="btn-back"></a>
-        </div>
+      
     </div>
   <!-- 헤더 영역  -->
       <header>
@@ -66,6 +64,7 @@
           <div class="item item3"><a href="#">새</a></div>
           <div class="item item4"><a href="#">우중</a></div>
         </div>
+        <div class="footer-nav">
         for in 
           if( b.species == "")
         <footer> 
@@ -77,10 +76,11 @@
           <div class="click click2"><a href="#"></a></div>
           <!-- plus 버튼 -->
           <div class="click click3">
-          <a href="#">
+          <a href="{% url 'upload' %}">
             <img src="{% static 'image/plus.png' %}" alt="plus 사진">
           </a></div>
         </footer>
+      </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js" integrity="sha512-nTHzMQK7lwWt8nL4KF6DhwLHluv6dVq/hNnj2PBN0xMl2KaMm1PM02csx57mmToPAodHmPsipoERRNn4pG7f+Q==" crossorigin="anonymous"></script>
   </body>
