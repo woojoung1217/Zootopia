@@ -15,8 +15,9 @@ function goBackPage(){
 
 // 검색어 가져오기 메서드
 function getSearchWord(){
-  let url = decodeURI(location.search);
-  const searchWord = url.slice((url.indexOf('=')+1), url.length);
+  let url = decodeURIComponent(location.search);
+  let searchWord = url.slice((url.indexOf('=')+1), url.length);
+  searchWord = searchWord.replace(/\+/g , ' ');
   searchBox.value = searchWord;
 }
 
