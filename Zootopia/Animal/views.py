@@ -56,7 +56,7 @@ def result(request):
   else:
     names = Post.objects.filter(name__contains=search_word)[Post.objects.filter(name__contains=search_word).count()-5::1]
   
-  # 검색어를 포함하는 주소가 5개 이하일 경우
+  # # 검색어를 포함하는 주소가 5개 이하일 경우
   # if Post.objects.filter(address__contains=search_word).count()<5:
   #   addresses = Post.objects.filter(address__contains=search_word)
   # # 검색어를 포함하는 주소가 5개 이상일 경우
@@ -70,12 +70,12 @@ def result(request):
   else:
     species = Post.objects.filter(species__contains=search_word)[Post.objects.filter(species__contains=search_word).count()-5::1]
 
-  # # 검색어를 포함하는 작성자가 5개 이하일 경우
-  # if Post.objects.filter(author__contains=search_word).count()<5:
-  #   authors = Post.objects.filter(author__contains=search_word)
-  # # 검색어를 포함하는 작성자 5개 이상일 경우
-  # else:
-  #   authors = Post.objects.filter(author__contains=search_word)[Post.objects.filter(author__contains=search_word).count()-5::1]
+  # 검색어를 포함하는 작성자가 5개 이하일 경우
+  if Post.objects.filter(author__nickname__contains=search_word).count()<5:
+    authors = Post.objects.filter(author__nickname__contains=search_word)
+  # 검색어를 포함하는 작성자 5개 이상일 경우
+  else:
+    authors = Post.objects.filter(author__nickname__contains=search_word)[Post.objects.filter(author__nickname__contains=search_word).count()-5::1]
 
   # 검색어를 포함하는 해시태그가 5개 이하일 경우
   if Post.objects.filter(hash_tag__contains=search_word).count()<5:
@@ -84,7 +84,7 @@ def result(request):
   else:
     hashTags = Post.objects.filter(hash_tag__contains=search_word)[Post.objects.filter(hash_tag__contains=search_word).count()-5::1]
 
-  return render (request, 'result.html', {'names':names, 'addresses':addresses, 'species':species, 'authors':authors, 'hashTags':hashTags})
+  return render (request, 'result.html', {'names':names, 'species':species, 'authors':authors, 'hashTags':hashTags})
 
 def profile(request):
   return render(request,'profile.html')

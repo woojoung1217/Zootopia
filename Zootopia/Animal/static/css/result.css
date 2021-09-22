@@ -174,3 +174,14 @@ html {
   font-size: 1.6rem;
 }
 /* 메인 끝 */
+
+/* 컨테이너 시작 */
+.blolck-off {
+  display: none;
+}
+
+.block-on {
+  display: block;
+}
+
+/* 컨테이너 끝 */

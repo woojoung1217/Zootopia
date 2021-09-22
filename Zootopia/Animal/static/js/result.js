@@ -2,12 +2,18 @@ const selected = document.querySelector(".selected");
 const manues = document.querySelectorAll(".nav-manu");
 const searchBox = document.querySelector("#search-box");
 
+// 네비게이션 메뉴
 const integrated = document.querySelector("#integrated");
 const address = document.querySelector("#address");
 const species = document.querySelector("#species");
 const animalName = document.querySelector("#name");
 const author = document.querySelector("#author");
 const hashTag = document.querySelector("#hash-tag");
+
+// 컨테이너
+const mainContainer = document.querySelector("#mainContainer");
+const integratedTab = document.querySelector("#integrated-tab");
+const nameTab = document.querySelector("#name-tab");
 
 // 네비게이션 탭 선택 전환 메서드
 function toggleSelected(event){
@@ -46,8 +52,11 @@ function openAddressTab(){
   for(let i = 0; i < manues.length; i++){
     manues[i].classList.remove("selected-manu");
     manues[i].children[0].classList.remove("selected-title");
+
+    mainContainer.children[0].classList.add("block-off");
   }
   address.classList.add("selected-manu");
+  nameTab.classList.add("block-on");
 }
 
 // 동물종탭 선택 메서드
@@ -85,5 +94,6 @@ function openHashTagTab(){
   }
   hashTag.classList.add("selected-manu");
 }
+
 
 getSearchWord();
