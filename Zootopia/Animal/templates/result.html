@@ -28,26 +28,60 @@
     <!-- 상단 검색 영역 끝 -->
     <!-- 네비게이션 바 시작 -->
     <div id="nav">
-      <div class="nav-manu selected-manu">
+      <div id="integrated" class="nav-manu selected-manu" onclick="openIntegratedTab()">
           <p class="nav-manu-title selected-title">통합검색</p>
       </div>
-      <div class="nav-manu">
+      <div id="address" class="nav-manu" onclick="openAddressTab()">
         <p class="nav-manu-title">주소</p>
       </div>
-      <div class="nav-manu">
+      <div id="species" class="nav-manu" onclick="openSpeciesTab()">
         <p class="nav-manu-title">동물종</p>
       </div>
-      <div class="nav-manu">
+      <div id="name" class="nav-manu" onclick="openNameTab()">
         <p class="nav-manu-title">동물이름</p>
       </div>
-      <div class="nav-manu">
+      <div id="author" class="nav-manu" onclick="openAuthorTab()">
         <p class="nav-manu-title">작성자</p>
       </div>
-      <div class="nav-manu">
+      <div id="hash-tag" class="nav-manu" onclick="openHashTagTab()">
         <p class="nav-manu-title">#태그</p>
       </div>
     </div>
     <!-- 네비게이션 바 끝 -->
+    <div id="mainContainer">
+      <!-- 통합검색 탭 시작 -->
+      <div id="integrated-tab">
+        <!-- 주소 5개 -->
+        <div onclick="">
+          <p class="top-title">이름 ></p>
+        </div>
+        {% for post in names %}
+              <div class="recent-post">
+                <div class="recent-post-profile-area">
+                  {% if post.image %}
+                  <img class="profile-img" src="{{ post.image.url }}" alt="">
+                  {% else %}
+                  <img class="profile-img" src="{% static 'image/cat.jpg' %}" alt="">
+                  {% endif %}
+                </div>
+                <div class="recent-post-left-area">
+                  <div class="recent-post-left-top-area">
+                    <p class="animal-name">{{ post.name }}</p>
+                    <p class="animal-border">|</p>
+                    <p class="animal-species">{{ post.species }}</p>
+                  </div>
+                  <div class="recent-post-left-bottom-area">
+                    <p class="hash-tag">{{ post.hash_tag }}</p>
+                  </div>
+                </div>
+                <div class="recent-post-right-area">
+                  <p class="location">{{ post.location }}</p>
+                  <p class="writer">{{ post.name }}</p>
+                </div>
+              </div>
+        {% endfor %}
+      </div>
+      <!-- 통합검색 탭 끝 -->
   </div>
   <!-- 메인 컨테이너 끝 -->
   <script src="{% static 'js/result.js' %}"></script>
