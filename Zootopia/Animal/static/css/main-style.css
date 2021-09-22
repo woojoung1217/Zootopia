@@ -33,7 +33,7 @@ header {
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 999;
+  z-index: 99;
 }
 
 header .menu-btn {
@@ -52,10 +52,10 @@ header .menu-btn {
 #profile{
   display:none;
   width: 80%;
-  height:700px;
+  height:100%;
   background-color:#fff;
-  position: relative;
-  z-index: 2;
+  position: fixed;
+  z-index: 999;
 }
 
 #profile .profile-header{
@@ -125,6 +125,9 @@ header .menu-btn {
   background-size: 30px 22px;
   background-position: center;
 }
+header{
+
+}
 
 header .menu-btn {
   width: 40px;
@@ -165,7 +168,6 @@ header .input-box .box-size{
 header .input-box .box-size:focus{
   outline: none;
 }
-
 /* container 영역 */
 
 .container {
@@ -175,7 +177,7 @@ header .input-box .box-size:focus{
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 999;
+  z-index: 99;
 }
 
 
