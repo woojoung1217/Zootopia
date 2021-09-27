@@ -33,7 +33,7 @@ def upload (request):
       user = User.objects.get(id = user_id)
       post_blog.author = user
       post_blog.save()
-      return redirect('detail', post_blog.id)
+      return redirect('location', post_blog.id)
    else:
       return render (request, 'upload.html')  
 
@@ -89,8 +89,10 @@ def result(request):
 def profile(request):
   return render(request,'profile.html')
 
-def location(request):
-  return render(request,'location.html')
+def location(request, id):
+  post = get_object_or_404(Post, pk = id)
+  person = get_object_or_404(get_user_model(), username=request.user)
+  return render(request,'location.html', {'post' : post, 'person': person})
 
 
 def delete(request, id):
