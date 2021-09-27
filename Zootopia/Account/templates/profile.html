@@ -49,13 +49,13 @@
         </div>
       </div>
       <div class = "my-introduce">
+        
         <h5 placeholder = "내 소개">{{person.introduce}}</h5> <!-- 내 소개 넣는 공간 -->
       </div>
-      <div class = "my-post">
-        <h5>내가 작성한 게시물</h5>        <!-- 내가 작성한 글? -->
-      </div>
       <div class = "btn-modifi">   <!-- 프로필 수정 버튼 -->
-         <a href="{% url 'profile_edit' %}">수정 임시 버튼</a> 
+        <div class="btn-style">
+         <a href="{% url 'profile_edit' %}">수정하기</a> 
+        </div>
       </div>
     </div> <!-- id 카드 끝 -->
   </div>

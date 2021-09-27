@@ -8,14 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/profile.css'%}">
+  <link rel="stylesheet" href="{% static 'css/profile-edit.css'%}">
   <title>account</title>
 </head>
 <body>
   <!--헤더 시작 -->
     <div id = "header-wrapper">  
       <div class ="btn-back">
-        <img src="{% static 'image/back.png' %}"> <!-- 뒤로가기 버튼 -->
+       <a href="{% url 'profile'%}"> <img src="{% static 'image/back.png' %}"></a> <!-- 뒤로가기 버튼 -->
       </div>
       <a class ="logo">동심|動心</a>
       <div class="blank"> <a href = "{% url 'logout'%}">Logout</a></div>
@@ -48,16 +48,13 @@
         <div class = "blank">
         </div>
         <div class="profile-name">
-          <input type="text" placeholder="닉네임" name="nickname" value={{person.nickname}}></input>           <!-- 작성자 이름 넣는 공간 -->
+          <input type="text"placeholder="닉네임" name="nickname" value={{person.nickname}}></input>           <!-- 작성자 이름 넣는 공간 -->
         </div>
         <div class = "blank">
         </div>
       </div>
       <div class = "my-introduce">
-        <input type="text" placeholder="내 소개"  name="introduce" value={{person.introduce}}></input>   <!-- 내 소개 넣는 공간 -->
-      </div>
-      <div class = "my-post">
-        <h5>내가 작성한 게시물</h5>        <!-- 내가 작성한 글? -->
+        <input type="text" placeholder="내 소개" class="introduce-style"  name="introduce" value={{person.introduce}}></input>   <!-- 내 소개 넣는 공간 -->
       </div>
       <div class = "btn-modifi">   <!-- 프로필 수정 버튼 -->
         <button type="submit">프로필 수정</button>
