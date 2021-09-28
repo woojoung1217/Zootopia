@@ -77,12 +77,19 @@
       
     <!-- 댓글 다는 공간 -->
     <div class="comment-area">
+    <form method="POST">  <!-- 폼 태그 시작 -->
+     {% csrf_token %}
       <div class="input-comment">
-        <textarea name="comment" id="comment"placeholder="댓글달기..."></textarea>
+        <textarea name="body" id="comment"placeholder="댓글달기..."></textarea>
       </div>
       <div class="comment-btn">
-        <a href="#">작성</a>
+        <button type="submit" href="#">작성</button>
       </div>
+       {% for comment in comments %}
+       {{comment.user.nickname}} {{comment.body}} - {{comment.date|date:'m-d h:i' }}   <!-- 작성된 댓글 -->
+       <br>
+       {% endfor %}
     </div>
+    </form>  <!-- 폼 태그 끝 -->
 </body>
 </html>

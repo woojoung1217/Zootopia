@@ -12,12 +12,21 @@ def detail(request, id):
   post = get_object_or_404(Post, pk = id)
   person = get_object_or_404(get_user_model(), username=request.user)
 
+  comments = Comment.objects.filter(post = id)
+  if request.method == "POST":
+            comment = Comment()
+            comment.user = get_object_or_404(get_user_model(), username=request.user)
+            comment.post = post
+            comment.body = request.POST.get('body')
+            comment.date = timezone.now()
+            comment.save()
+
   if post.likes.filter(id=request.user.id):
         message="취소"
   else:
         message="좋아요"
 
-  return render(request, 'detail.html', {'post' :post,'person':person, 'message' : message})
+  return render(request, 'detail.html', {'post' :post,'comments' : comments, 'person':person, 'message' : message})
 
 def upload (request):
    if request.method == "POST":  
@@ -33,7 +42,7 @@ def upload (request):
       user = User.objects.get(id = user_id)
       post_blog.author = user
       post_blog.save()
-      return redirect('detail', post_blog.id)
+      return redirect('location', post_blog.id)
    else:
       return render (request, 'upload.html')  
 
@@ -89,8 +98,10 @@ def result(request):
 def profile(request):
   return render(request,'profile.html')
 
-def location(request):
-  return render(request,'location.html')
+def location(request, id):
+  post = get_object_or_404(Post, pk = id)
+  person = get_object_or_404(get_user_model(), username=request.user)
+  return render(request, 'location.html', {'post' : post, 'person': person})
 
 
 def delete(request, id):
