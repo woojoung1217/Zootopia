@@ -258,3 +258,9 @@ footer .click3{
    background-color: #C89D6C;
    background-size: contain;
 }
+
+/* 좌표  div
+*/
+ .dsp-none{
+   display: none;
+ }
