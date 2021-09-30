@@ -57,6 +57,7 @@
             <p class="top-title">동물이름 ></p>
           </div>
           {% for post in names %}
+           <a href="{% url 'detail' post.id %}">
                 <div class="recent-post">
                   <div class="recent-post-profile-area">
                     {% if post.image %}
@@ -80,6 +81,7 @@
                     <p class="writer">{{ post.name }}</p>
                   </div>
                 </div>
+            </a>
           {% endfor %}
         </div>
         <!-- 동물이름 컨테이너 끝 -->
@@ -89,6 +91,7 @@
             <p class="top-title">동물종 ></p>
           </div>
           {% for post in species %}
+           <a href="{% url 'detail' post.id %}">
                 <div class="recent-post">
                   <div class="recent-post-profile-area">
                     {% if post.image %}
@@ -112,15 +115,17 @@
                     <p class="writer">{{ post.name }}</p>
                   </div>
                 </div>
+            </a>
           {% endfor %}
         </div>
         <!-- 동물종 컨테이너 끝 -->
         <!-- 주소 컨테이너 시작 -->
         <div class="result-container">
           <div onclick="openAddressTab()">
-            <p class="top-title">주소 ></p>
+            <p class="top-title">주소</p>
           </div>
           {% for post in addresses %}
+           <a href="{% url 'detail' post.id %}">
                 <div class="recent-post">
                   <div class="recent-post-profile-area">
                     {% if post.image %}
@@ -146,6 +151,7 @@
                     <p class="writer">{{ post.name }}</p>
                   </div>
                 </div>
+            </a>
           {% endfor %}
         </div>
         <!-- 주소 컨테이너 끝 -->
