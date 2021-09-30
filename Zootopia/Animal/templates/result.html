@@ -72,7 +72,7 @@
                       <p class="animal-species">{{ post.species }}</p>
                     </div>
                     <div class="recent-post-left-bottom-area">
-                      <p class="hash-tag">{{ post.hash_tag }}</p>
+                      <p class="hash-tag">{{ post.hash_tag }}</p>   
                     </div>
                   </div>
                   <div class="recent-post-right-area">
@@ -131,7 +131,9 @@
                   </div>
                   <div class="recent-post-left-area">
                     <div class="recent-post-left-top-area">
-                      <p class="animal-name">{{ post.name }}</p>
+                    <a  href="{%url 'detail' post.id%} ">
+                     <p class="animal-name">{{ post.name }}</p>
+                    </a>
                       <p class="animal-border">|</p>
                       <p class="animal-species">{{ post.species }}</p>
                     </div>
