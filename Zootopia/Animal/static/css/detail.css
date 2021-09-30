@@ -1,10 +1,14 @@
+
+
 header {
   width: 100%;
-  height: 50px;
+  height: 40px;
   display: flex;
   justify-content:space-between;
   align-items: center;
-  border-bottom: 1.6px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  background-color: #C89D6C;
+  color:#fff;
 }
 header .h1-control{
   width: 50%;
@@ -21,10 +25,11 @@ header h1 {
 header .btn-cover {
   width: 20%;
   height: 30px;
+  margin-bottom: 10px;
 
 }
 header .btn-cover .back-btn{
-  margin-left: 20px;
+
 }
 
 header .none {
@@ -33,6 +38,14 @@ header .none {
   /* 헤더 화면 정렬을 위한 태그 */
 }
 
+.middletext {
+  width: 100%;
+  height: 20px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 /* sub-header  */
 
@@ -41,29 +54,30 @@ header .none {
   height: 40px;
   border-bottom: 1px solid #ddd;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
+  font-size: 16px;
+
 }
 
 .sub-header .content-text {
   width: 20%;
-  height: 30px;
+
 }
 
 .sub-header .content-type {
   width: 20%;
-  height: 30px;
+
 }
 .sub-header .content-loacation {
-  width: 50%;
-  height: 30px;
+  width: 20%;
 }
 
 
 .content-picture{
   width: 100%;
-  height: 250px;
+  height: 300px;
   border-bottom: 1px solid #ddd;
   display: flex;
   justify-content: center;
@@ -81,98 +95,76 @@ header .none {
 
 .emotion{
   width: 100%;
-  height: 90px;
+  height: 130px;
   border-bottom: 1px solid #ddd;
-
+  overflow: scroll;
+}
+.emotion .Like {
+  width: 50%;
+  height: 30px;
+  color: #C89D6C;
 }
 
+
+.emotion .hashtag {
+  font-size: 16px;
+  color:grey;
+}
+.emotion .textbox {
+  width: 100%;
+  height: 60px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
 .emotion .emotion-select {
   width: 100%;
   height: 50px;
-  display: flex;
-  justify-content:flex-start;
-  align-items: center;
   margin-left: 10px;
-}
-.emotion .emotion-select .like{
-  width: 20px;
-  height: 20px;
-  border:1px solid #ddd;
-  border-radius: 50px;
-  margin-right: 10px;
-  transition: 1s;
-}
-.emotion .emotion-select .like:hover{
-  background-color: bisque;
-}
-.emotion .emotion-select .hate{
-  width: 20px;
-  height: 20px;
-  border:1px solid #ddd;
-  border-radius: 50px;
-  margin-left: 10px;
-  transition: 1s;
-}
-.emotion .emotion-select .hate:hover{
-  background-color: bisque;
-}
-
-.emotion .etc {
-  width: 100%;
-  height: 50%;
   margin-top: 10px;
-  display: flex;
+  margin-bottom: 10px;
 }
-.emotion .etc .etc1{
-  width: 20px;
-  height: 20px;
-  border:1px solid #ddd;
-  border-radius: 50px;
-  margin-left: 10px;
+
+.emotion .emotion-select a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #000;
   transition: 1s;
-}
 
-.emotion .etc .etc1:hover{
-  background-color: bisque;
-}
-.emotion .etc .textbox {
-  width: 50%;
-  height: 20px;
-  margin-left: 10px;
 }
 
 
+.delete {
+  margin-top: 20px;
+}
 .comment-area {
   width: 100%;
-  height: 90px;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  height: 50px;
 }
-
 
 #comment {
   width: 100%;
   height: 80px;
   border-style: none;
   color:#000;
-  font-size: 12px;  
-  margin-left: 20px;
+  font-size: 15px; 
+  font-weight: 400;
+  border-bottom: 1px solid  #ddd ;
+
+}
+#comment:hover {
+  outline: none;
 }
 
-
-.comment-area .comment-btn{
+.comment-btn button {
   width: 20%;
-  height: 20px;
+  font-size: 15px;
+  border: 1px solid #C89D6C;
   background-color: #C89D6C;
-  margin-right: 20px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 5px 5px 5px #ddd;
+  color:#fff;
+  border-radius: 10px;
 }
+
 
 .comment-area .comment-btn a{
   font-size: 12px;
@@ -180,4 +172,20 @@ header .none {
   color: #fff;
   text-decoration: none;
   transition: 1s;
+}
+.comment-area .comment-f {
+  width: 100%;
+  height: 150px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  overflow: scroll;
+  font-size: 16px;
+}
+.comment-area .comment-f >li {
+  width: 100%;
+  height: 5px;
+  text-decoration: none;
+  list-style: none;
+  border-top: 1px solid #C89D6C;
+  margin-top: 5px;
 }
