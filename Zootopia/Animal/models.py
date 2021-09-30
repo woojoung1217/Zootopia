@@ -27,6 +27,8 @@ class Post(models.Model):
   latitude = models.FloatField(default=0.0) 
   # 경도
   longitude = models.FloatField(default=0.0)
+  # 주소
+  address = models.CharField(max_length=20)
   # 좋아요
   likes = models.ManyToManyField('account.User', through='Like', through_fields=('post', 'user'), related_name='likes')    
 
