@@ -16,14 +16,37 @@ navigator.geolocation.getCurrentPosition(function(position) {
     var lat = position.coords.latitude, // 위도
         lon = position.coords.longitude; // 경도
     var locPosition = new kakao.maps.LatLng(lat, lon) 
-    displayMarker(locPosition);
-    
+    displayInfoMarker(locPosition);
   });
 } 
 
+function setAllLocation(){
+  let list_lat = document.querySelector("#list-lat").innerText.split(',');
+  let list_lon = document.querySelector("#list-lon").innerText.split(',');
+  let locations = new Array();
+
+  // 위도 경도 좌표리스트로 다시 저장
+  for(let index = 0; index < list_lat.length; index++){
+    const lat = list_lat[index];
+    const lon = list_lon[index];
+    locations.push(new kakao.maps.LatLng(lat, lon));
+  }
+  
+  // 좌표 리스트에서 마커로 생성
+  for(let index = 0; index < list_lat.length; index++){
+    let marker = new kakao.maps.Marker({
+      map: map,
+      position: locations[index]
+    });
+  
+  // 마커가 지도 위에 표시되도록 설정합니다
+  marker.setMap(map);
+  }
+}
+
 
 // 지도에 마커를 표시하는 함수입니다
-function displayMarker(locPosition) {
+function displayInfoMarker(locPosition) {
 // 마커를 생성합니다.
 var marker = new kakao.maps.Marker({  
     map: map, 
@@ -40,4 +63,6 @@ var marker = new kakao.maps.Marker({
 infowindow.open(map,marker);
 // 지도 중심좌표를 접속위치로 변경합니다
 map.setCenter(locPosition);      
-}    
+}
+
+setAllLocation();
