@@ -6,7 +6,8 @@ from .models import *
 from account.models import User
 
 def main (request):
-  return render (request, 'main.html')  
+  posts = Post.objects.all()
+  return render (request, 'main.html', {"posts":posts})  
 
 def detail(request, id):
   post = get_object_or_404(Post, pk = id)
