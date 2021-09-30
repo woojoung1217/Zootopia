@@ -149,9 +149,161 @@
         <!-- 주소 컨테이너 끝 -->
       </div>
       <!-- 통합검색 탭 끝 -->
-      <div id="name-tab">
-
+      <!-- 동물이름 탭 시작 -->
+      <div id="name-tab" class="block-off">
+        <div class="result-container">
+          {% for post in names %}
+                <div class="recent-post">
+                  <div class="recent-post-profile-area">
+                    {% if post.image %}
+                    <img class="profile-img" src="{{ post.image.url }}" alt="">
+                    {% else %}
+                    <img class="profile-img" src="{% static 'image/cat.jpg' %}" alt="">
+                    {% endif %}
+                  </div>
+                  <div class="recent-post-left-area">
+                    <div class="recent-post-left-top-area">
+                      <p class="animal-name">{{ post.name }}</p>
+                      <p class="animal-border">|</p>
+                      <p class="animal-species">{{ post.species }}</p>
+                    </div>
+                    <div class="recent-post-left-bottom-area">
+                      <p class="hash-tag">{{ post.hash_tag }}</p>
+                    </div>
+                  </div>
+                  <div class="recent-post-right-area">
+                    <p class="location">{{ post.location }}</p>
+                    <p class="writer">{{ post.name }}</p>
+                  </div>
+                </div>
+          {% endfor %}
+        </div>
       </div>
+      <!-- 동물이름 탭 끝 -->
+      <!-- 동물종 탭 시작 -->
+      <div id="species-tab" class="block-off">
+        <div class="result-container">
+          {% for post in species %}
+                <div class="recent-post">
+                  <div class="recent-post-profile-area">
+                    {% if post.image %}
+                    <img class="profile-img" src="{{ post.image.url }}" alt="">
+                    {% else %}
+                    <img class="profile-img" src="{% static 'image/cat.jpg' %}" alt="">
+                    {% endif %}
+                  </div>
+                  <div class="recent-post-left-area">
+                    <div class="recent-post-left-top-area">
+                      <p class="animal-name">{{ post.name }}</p>
+                      <p class="animal-border">|</p>
+                      <p class="animal-species">{{ post.species }}</p>
+                    </div>
+                    <div class="recent-post-left-bottom-area">
+                      <p class="hash-tag">{{ post.hash_tag }}</p>
+                    </div>
+                  </div>
+                  <div class="recent-post-right-area">
+                    <p class="location">{{ post.location }}</p>
+                    <p class="writer">{{ post.name }}</p>
+                  </div>
+                </div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- 동물종 탭 끝 -->
+      <!-- 주소 탭 시작 -->
+      <div id="address-tab" class="block-off">
+        <div class="result-container">
+          {% for post in adresses %}
+                <div class="recent-post">
+                  <div class="recent-post-profile-area">
+                    {% if post.image %}
+                    <img class="profile-img" src="{{ post.image.url }}" alt="">
+                    {% else %}
+                    <img class="profile-img" src="{% static 'image/cat.jpg' %}" alt="">
+                    {% endif %}
+                  </div>
+                  <div class="recent-post-left-area">
+                    <div class="recent-post-left-top-area">
+                      <p class="animal-name">{{ post.name }}</p>
+                      <p class="animal-border">|</p>
+                      <p class="animal-species">{{ post.species }}</p>
+                    </div>
+                    <div class="recent-post-left-bottom-area">
+                      <p class="hash-tag">{{ post.hash_tag }}</p>
+                    </div>
+                  </div>
+                  <div class="recent-post-right-area">
+                    <p class="location">{{ post.location }}</p>
+                    <p class="writer">{{ post.name }}</p>
+                  </div>
+                </div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- 주소 탭 끝 -->
+      <!-- 작성자 탭 시작 -->
+      <div id="author-tab" class="block-off">
+        <div class="result-container">
+          {% for post in authors %}
+                <div class="recent-post">
+                  <div class="recent-post-profile-area">
+                    {% if post.image %}
+                    <img class="profile-img" src="{{ post.image.url }}" alt="">
+                    {% else %}
+                    <img class="profile-img" src="{% static 'image/cat.jpg' %}" alt="">
+                    {% endif %}
+                  </div>
+                  <div class="recent-post-left-area">
+                    <div class="recent-post-left-top-area">
+                      <p class="animal-name">{{ post.name }}</p>
+                      <p class="animal-border">|</p>
+                      <p class="animal-species">{{ post.species }}</p>
+                    </div>
+                    <div class="recent-post-left-bottom-area">
+                      <p class="hash-tag">{{ post.hash_tag }}</p>
+                    </div>
+                  </div>
+                  <div class="recent-post-right-area">
+                    <p class="location">{{ post.location }}</p>
+                    <p class="writer">{{ post.name }}</p>
+                  </div>
+                </div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- 작성자 탭 끝 -->
+      <!-- 해시태그 탭 시작 -->
+      <div id="hash-tag-tab" class="block-off">
+        <div class="result-container">
+          {% for post in hashTags %}
+                <div class="recent-post">
+                  <div class="recent-post-profile-area">
+                    {% if post.image %}
+                    <img class="profile-img" src="{{ post.image.url }}" alt="">
+                    {% else %}
+                    <img class="profile-img" src="{% static 'image/cat.jpg' %}" alt="">
+                    {% endif %}
+                  </div>
+                  <div class="recent-post-left-area">
+                    <div class="recent-post-left-top-area">
+                      <p class="animal-name">{{ post.name }}</p>
+                      <p class="animal-border">|</p>
+                      <p class="animal-species">{{ post.species }}</p>
+                    </div>
+                    <div class="recent-post-left-bottom-area">
+                      <p class="hash-tag">{{ post.hash_tag }}</p>
+                    </div>
+                  </div>
+                  <div class="recent-post-right-area">
+                    <p class="location">{{ post.location }}</p>
+                    <p class="writer">{{ post.name }}</p>
+                  </div>
+                </div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- 작성자 탭 끝 -->
   </div>
   <!-- 메인 컨테이너 끝 -->
   <script src="{% static 'js/result.js' %}"></script>
