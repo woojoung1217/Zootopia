@@ -52,7 +52,6 @@ header .button-design {
   position: fixed;
   z-index: 3;
   margin-left: 10px;
-  box-shadow: 2px 2px 2px #ddd;
 }
 header .button-design > a {
   text-decoration: none;
