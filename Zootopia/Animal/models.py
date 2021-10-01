@@ -27,6 +27,8 @@ class Post(models.Model):
   latitude = models.FloatField(default=0.0) 
   # 경도
   longitude = models.FloatField(default=0.0)
+  # 주소
+  address = models.CharField(max_length=20)
   # 좋아요
   likes = models.ManyToManyField('account.User', through='Like', through_fields=('post', 'user'), related_name='likes')    
 
@@ -41,4 +43,4 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, null=True) 
     user = models.ForeignKey('account.User', on_delete=models.CASCADE, null=True)
     body = models.TextField(max_length=200)
-    date = models.DateTimeField(default=timezone.now)
+    date = models.DateTimeField('data published', default=timezone.now())
