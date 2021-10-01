@@ -91,7 +91,7 @@
       <div class="comment-f">
        {% for comment in comments %}
        {{comment.user.nickname}}<br> <br>{{comment.body}} 
-       <br><br>{{comment.date|date:'m-d h:i' }}   <!-- 작성된 댓글 -->
+       <br><br>{{comment.date|date:'m-d H:i' }}   <!-- 작성된 댓글 -->
        <br>
       <li></li>
        {% endfor %}

@@ -106,7 +106,7 @@ def location(request, id):
   if request.method == "POST":
     post.address = request.POST.get("address")
     post.save()
-    return redirect('/main')
+    return redirect('detail', post.id)
   return render(request, 'location.html', {'post' : post, 'person': person})
 
 
@@ -121,11 +121,13 @@ def edit(request, id):
     if request.method == "POST":
       post_blog.name= request.POST.get('name')
       post_blog.time = timezone.datetime.now() 
-      post_blog.image = request.FILES.get('image')
       post_blog.body = request.POST.get('body')
       post_blog.hash_tag = request.POST.get('hashtag')
       post_blog.species = request.POST.get('species')
       post_blog.variety = request.POST.get('variety')
+      picture = request.FILES.get('image')
+      if picture :
+        post_blog.image = picture
       post_blog.save()
       return redirect('detail', post_blog.id)
     else:        
