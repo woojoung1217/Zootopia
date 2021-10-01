@@ -242,13 +242,17 @@ footer {
  }
 
 footer .click1 {
-  position: relative;
+  position:relative;
   z-index: 999;
+  background-image: url(../image/1.png);
+  background-size:contain;
 }
 
 footer .click2{
   position: relative;
   z-index: 999;
+  background-image: url(../image/2.png);
+  background-size: contain;
 }
 
 footer .click3{
