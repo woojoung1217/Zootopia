@@ -51,10 +51,12 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
 
 });
 
-
-
 // 주소 가져오는 api
 
+// 마지막 위치 저장하는 변수
+let lastAddress = "위치";
+// 서버로 넘기기 위해 주소 저장하는 임시 div
+let addressContainer = document.querySelector("#address");
 // 주소-좌표 변환 객체를 생성합니다
 var geocoder = new kakao.maps.services.Geocoder();
  // 클릭한 위치를 표시할 마커입니다
@@ -72,14 +74,27 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
             // 마커를 클릭한 위치에 표시합니다 
             marker.setPosition(mouseEvent.latLng);
             marker.setMap(map);
-            console.log(content.split(" "))
 
+            extractCity(content);
+            addressContainer.value = lastAddress;
             // 인포윈도우에 클릭한 위치에 대한 법정동 상세 주소정보를 표시합니다
             infowindow.setContent(content);
             infowindow.open(map, marker);
         }   
     });
 });
+
+// 동/리 까지 표시되게 추출 메서드
+function extractCity(content){
+    // 띄어 주소 쓰기로 분리
+    lastAddress = content.split(" ");
+    // 마지막 세부 주소 삭제
+    lastAddress.pop();
+    // 산일 경우 산 삭제
+    if(lastAddress[lastAddress.length-1]=="산"){
+        lastAddress.pop();
+    }
+}
 
 // 중심 좌표나 확대 수준이 변경됐을 때 지도 중심 좌표에 대한 주소 정보를 표시하도록 이벤트를 등록합니다
 kakao.maps.event.addListener(map, 'idle', function() {
