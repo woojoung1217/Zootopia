@@ -15,18 +15,15 @@
     <!-- <button type ="submit"onclick="history.back()"">선택완료</button> -->
     <div id="map"></div>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f3346db9637de84daa334492d7bf7369&libraries=services"></script>
-    <!-- <script>
-      var container = document.getElementById('map');
-      var options = {
-        center: new kakao.maps.LatLng(33.450701, 126.570667),
-        level: 3
-      };
-      var map = new kakao.maps.Map(container, options);
-    </script> -->
       <header>
         <div class="text-box">
           <h1>게시물을 올릴 위치를 선택해주세요 {{post.name}}</h1>
-        </div> 
-        <button type="submit" class="button-design"onclick="history.back()">선택완료</button>
+        </div>
+        <form method="POST">
+          {% csrf_token %}
+          <input id="address" class="block-off" name="address"></input>
+          <button type="submit" class="button-design">선택완료</button>
+        </form>
+
       </header>
   </body> 

@@ -43,4 +43,4 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, null=True) 
     user = models.ForeignKey('account.User', on_delete=models.CASCADE, null=True)
     body = models.TextField(max_length=200)
-    date = models.DateTimeField(default=timezone.now)
+    date = models.DateTimeField('data published', default=timezone.now())

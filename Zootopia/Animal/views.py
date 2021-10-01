@@ -4,6 +4,7 @@ from animal.models import Post
 from django.contrib.auth import get_user_model
 from .models import *
 from account.models import User
+from django.utils import timezone
 
 def main (request):
   posts = Post.objects.all()
@@ -19,7 +20,7 @@ def detail(request, id):
             comment.user = get_object_or_404(get_user_model(), username=request.user)
             comment.post = post
             comment.body = request.POST.get('body')
-            comment.date = timezone.now()
+            comment.date = timezone.datetime.now()
             comment.save()
 
   if post.likes.filter(id=request.user.id):
@@ -102,6 +103,10 @@ def profile(request):
 def location(request, id):
   post = get_object_or_404(Post, pk = id)
   person = get_object_or_404(get_user_model(), username=request.user)
+  if request.method == "POST":
+    post.address = request.POST.get("address")
+    post.save()
+    return redirect('/main')
   return render(request, 'location.html', {'post' : post, 'person': person})
 
 
