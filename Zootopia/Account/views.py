@@ -46,7 +46,9 @@ def profile_edit(request):
     if request.method == "POST":
       person.nickname = request.POST.get('nickname')
       person.introduce = request.POST.get('introduce') 
-      person.profile_picture = request.FILES.get('profile_picture')
+      picture = request.FILES.get('profile_picture')
+      if picture :
+        person.profile_picture = picture
       person.save()
       return redirect('/account/profile/', {'person' : person})
     
