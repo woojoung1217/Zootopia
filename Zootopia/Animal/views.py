@@ -103,6 +103,10 @@ def profile(request):
 def location(request, id):
   post = get_object_or_404(Post, pk = id)
   person = get_object_or_404(get_user_model(), username=request.user)
+  if request.method == "POST":
+    post.address = request.POST.get("address")
+    post.save()
+    return redirect('/main')
   return render(request, 'location.html', {'post' : post, 'person': person})
 
 

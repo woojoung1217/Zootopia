@@ -1,9 +1,8 @@
-
-html{
+html {
   font-size: 10px;
 }
 
-#map{
+#map {
   display: block;
   position: fixed;
   width: 100%;
@@ -11,10 +10,13 @@ html{
   z-index: 1;
 }
 
-
-body{
-  width: 100%;  
+body {
+  width: 100%;
   height: 100%;
+}
+
+.block-off {
+  display: none;
 }
 
 header {
@@ -28,31 +30,31 @@ header {
   position: absolute;
   background-color: #fff;
 }
-header .text-box{
+header .text-box {
   display: block;
   z-index: 2;
   position: absolute;
 }
-header .text-box h1{
+header .text-box h1 {
   text-align: center;
   font-size: 17px;
   font-weight: 700;
   margin-left: 80px;
-  color:#000;
+  color: #000;
 }
 header .button-design {
   width: 60px;
   height: 30px;
   padding: 0;
   border-radius: 100px;
-  border:2px solid #fff;
-  background-color: #C89D6C;
+  border: 2px solid #fff;
+  background-color: #c89d6c;
   position: fixed;
   z-index: 3;
   margin-left: 10px;
-  box-shadow:  2px 2px 2px #ddd;
+  box-shadow: 2px 2px 2px #ddd;
 }
-header .button-design >a {
+header .button-design > a {
   text-decoration: none;
   color: #fff;
 }
