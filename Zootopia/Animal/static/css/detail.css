@@ -97,13 +97,15 @@ header .none {
   width: 100%;
   height: 130px;
   border-bottom: 1px solid #ddd;
-  overflow: scroll;
+  
 }
 .emotion .Like {
   width: 50%;
   height: 30px;
   color: #C89D6C;
+  margin-right: 30px;
 }
+
 
 
 .emotion .hashtag {
@@ -115,7 +117,15 @@ header .none {
   height: 60px;
   font-size: 18px;
   margin-bottom: 10px;
-  border-bottom: 1px solid #ddd;
+  overflow-y: scroll;
+  background-color: #F7F7F7;
+  font-size: 19px;
+  font-weight: 400;
+  transition: 1s;
+}
+.emotion .textbox:hover {
+  width: 100%;
+  height: 100px;
 }
 .emotion .emotion-select {
   width: 100%;
@@ -134,9 +144,17 @@ header .none {
 }
 
 
-.delete {
-  margin-top: 20px;
+.emotion .combine {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
 }
+
+.emotion .delete {
+  
+}
+
 .comment-area {
   width: 100%;
   height: 50px;
@@ -144,7 +162,7 @@ header .none {
 
 #comment {
   width: 100%;
-  height: 80px;
+  height: 50px;
   border-style: none;
   color:#000;
   font-size: 15px; 
@@ -154,16 +172,20 @@ header .none {
 }
 #comment:hover {
   outline: none;
+  background-color: #F7F7F7;
 }
 
 .comment-btn button {
   width: 20%;
+  height: 20px;
   font-size: 15px;
   border: 1px solid #C89D6C;
   background-color: #C89D6C;
   color:#fff;
   border-radius: 10px;
+  
 }
+
 
 
 .comment-area .comment-btn a{
@@ -176,16 +198,18 @@ header .none {
 .comment-area .comment-f {
   width: 100%;
   height: 150px;
-  margin-top: 10px;
+  margin-top: 15px;
   border: 1px solid #ddd;
   overflow: scroll;
   font-size: 16px;
+
 }
 .comment-area .comment-f >li {
   width: 100%;
   height: 5px;
   text-decoration: none;
   list-style: none;
-  border-top: 1px solid #C89D6C;
+  border-top: 2px solid #C89D6C;
   margin-top: 5px;
+ 
 }

@@ -54,23 +54,24 @@
       <div class="emotion-select">
         <div class="textbox">
           <p>{{post.body}}</p> 
-          <div class="hashtag">
-            {{post.hash_tag}}        <!-- 해시태그 --> 
-          </div>  <!-- 글 내용 -->
+         
        </div>
+       <div class="hashtag">
+        {{post.hash_tag}}        <!-- 해시태그 --> 
+      </div>  <!-- 글 내용 -->
+       <div class="combine">
+         
         <div class="Like">
           <a href = "{% url 'post_like' post.id %}">{{message}}</a><br>
           {{post.likes.count}}명이 좋아합니다.
         </div>
-        <div class="hate">
-        </div>
-
         <div class="delete">
           {%if post.author == user%}
             <a href="{% url 'edit' post.id %}">글 수정</a>   <!-- 수정 --> 
             <a href="{% url 'delete' post.id %}">글 삭제</a>   <!-- 삭제 -->
           {%endif%}     
         </div>
+      </div>
     </div>
       </div>
     </div>
@@ -82,9 +83,11 @@
       <div class="input-comment">
         <textarea name="body" id="comment"placeholder="댓글작성.."></textarea>
       </div>
+
       <div class="comment-btn">
-        <button type="submit" href="#">작성</button>
+        <button type="submit" href="#">댓글달기</button>
       </div>
+
       <div class="comment-f">
        {% for comment in comments %}
        {{comment.user.nickname}}<br> <br>{{comment.body}} 
