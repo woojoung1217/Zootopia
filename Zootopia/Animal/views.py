@@ -105,6 +105,8 @@ def location(request, id):
   person = get_object_or_404(get_user_model(), username=request.user)
   if request.method == "POST":
     post.address = request.POST.get("address")
+    post.latitude = request.POST.get("latitude")
+    post.longitude = request.POST.get("longitude")
     post.save()
     return redirect('detail', post.id)
   return render(request, 'location.html', {'post' : post, 'person': person})

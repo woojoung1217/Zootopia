@@ -133,8 +133,9 @@ html {
   justify-content: space-around;
 }
 
-.location {
-  font-size: 1.6rem;
+.address {
+  color: #c89d6c;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 .writer {
