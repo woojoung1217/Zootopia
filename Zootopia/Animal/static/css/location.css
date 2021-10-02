@@ -47,10 +47,11 @@ header .button-design {
   height: 30px;
   padding: 0;
   border-radius: 100px;
-  border: 2px solid #fff;
+  border: 2px solid #ddd;
   background-color: #c89d6c;
-  position: fixed;
+  position: relative;
   z-index: 3;
+  color: #fff;
   margin-left: 10px;
 }
 header .button-design > a {
